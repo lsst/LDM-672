@@ -22,16 +22,19 @@ Leanne P. Guy, Gabriele Comoretto
 \date{\today}
 
 % Optional: name of the document's curator
-\setDocCurator{Leanne Guy }
+\setDocCurator{Leanne Guy}
 
 \setDocAbstract{%
-In this document we propose a process for LSST software releases that will enable early adopters in the LSST science community to work with and contribute to the LSST software. 
+
+This document describes the processes that LSST Data Management will adopt for managing releases of the LSST Science Pipelines software in order to meet the 
+current and future needs of the LSST science community.  These processes should enable early adopters to effectively work with the LSST science piplines in developing user software for science exploitation and data challenges  and contribute to the LSST software.  We outline the processes needed in DM to meet these requirements. 
+
 }
 
 % Change history defined here.
 % Order: oldest first.
 % Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
-% See LPM-51 for version number policy.
+% See LPM-51 for version number policy.`
 \setDocChangeRecord{%
   \addtohist{1}{YYYY-MM-DD}{Unreleased.}{Leanne P. Guy}
 }
@@ -42,10 +45,10 @@ In this document we propose a process for LSST software releases that will enabl
 % Table of contents is added automatically with the "toc" class option.
 \maketitle
 
-
-
 % ADD CONTENT HERE ... a file per section can be good for editing
-\input{body}
+\input{introduction}
+\input{requirements}
+\input{process}
 
 \appendix
 % Include all the relevant bib files.
