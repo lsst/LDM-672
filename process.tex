@@ -1,42 +1,68 @@
 \section{Process} \label{sec:process}
 
+\subsection{Release Process Definition}
+
 The release process will be as follows:
 
 \begin{itemize}
-\item Major and minor releases will be planned and aproved by the DM-CCB well in advance. 
+\item Major and minor releases will be planned and approved by the DM-CCB well in advance. 
 \begin{itemize}
   \item It is recommended that the DM-CCB provide on a yearly base a release plan with tentative release dates and contents.
+  \item The DM-CCB shall monitor and eventually approve the content of each release. This will be done ensuring that all RFC that impacts a release content are approved by the DM-CCB.
 \end{itemize}
-\item all releases sould be clearly identified in Jira using the Jira functionality. If this is not available, a {\it Release Issue} ca be created (by the CRM) and the issues that are blocking the release, shall be related as blocker to the Release Issue. 
-\item Any extra releses, major, minor or patch, need to be requested by the release end users to the DM-CCB via RFC. The RFC shall contain:
+\item all releases should be clearly identified in Jira using the Jira functionality. If this is not available, a {\it Release Issue} ca be created (by the CRM) and the issues that are blocking the release, shall be related as blocker to the Release Issue. 
+\item Any extra releases, major, minor or patch, need to be requested by the release end users to the DM-CCB via RFC. The RFC shall contain:
 \begin{itemize}
   \item the reason an extra release
   \item the the list of features or fixes that need to be implemented in the release
   \item when the release should be available, and specify if it is urgent or not.
 \end{itemize}
-\item The DM-CCB will assess the release request, involving the relevant T/CAMs and tecnical contributor affected. 
-The DM-CCB shall provide mechanisms to approve a relese depending on the urgency. 
-Urgent releases coul be aproved in 24 hours, non urgent releases can be approved in one week time.
-\item The release request may be approved or rejectd.
-\item In case of approval, the following informatino will be provided back:
+\item The DM-CCB will assess the release request, involving the relevant T/CAMs and technical contributor affected. 
+The DM-CCB shall provide mechanisms to approve a release depending on the urgency. 
+Urgent releases could be approved in 24 hours, non urgent releases can be approved in one week time.
+\item The release request may be approved or rejected.
+\item In case of approval, the following information will be provided back:
 \begin{itemize}
   \item The version identification of the release
-  \item an estimatimation when the release will be available
+  \item an estimation when the release will be available
   \item confirm the content of the release
 \end{itemize}
-\item the DM-CCB will monitor that the release will be ready on time and comunicate changes in the release date
+\item the DM-CCB will monitor that the release will be ready on time and communicate changes in the release date
 \end{itemize}
 
 
 The DM-CCB is suppose to meet every week.
 
-Thecnical aspects and roles (who does what) shall be addressed as follows:
+Technical aspects and roles (who does what) shall be addressed as follows:
 
 \begin{itemize}
 \item {\bf regular development}: in the \href{https://developer.lsst.io/}{developer guide}
 \item {\bf fix porting}: in the \href{https://developer.lsst.io/}{developer guide}
-\item {\bf documentation}: in the \href{https://developer.lsst.io/}{develiper giuids} or a different document
-\item {\bf release engineering}: in a general release document (to be writte). At the time been \href{https://sqr-016.lsst.io/}{SQR-016} will be used for the science pipelines release.
+\item {\bf documentation}: in the \href{https://developer.lsst.io/}{developer guide} or a different document
+\item {\bf release engineering}: in a general release document (to be written). At the time been \href{https://sqr-016.lsst.io/}{SQR-016} will be used for the science pipelines release.
 \end{itemize}
 
+\subsection{Release Timing}
+
+The time needed to have a release available is due to different factors:
+
+\begin{itemize}
+\item assessment and development time
+\item build, continuous integration (CI) and validation time
+\item communication delays
+\item CCB process time
+\end{itemize}
+
+Defining a clear process as done here, will help reduce to the minimum the communication delays and CCB process time.
+
+Technical timing needed to assess and develop the solution, may be very difficult to reduce.
+
+Build time, CI time and validation instead are depending from the infrastructure and tooling used. 
+It is requested to the DM-CCB to evaluate technical solutions in order to reduce build, CI and validation required time.
+
+\subsection{Urgent Releases}
+
+In the case a very urgent release is required, that can't wait a formal approval of the DM-CCB (24 hours), a quick decision can be taken by the DMPM and a requested fix can be implemented and release immediatelly.
+
+However, a RFC need to be filed, even if a posteriori, and the DM-CCB is required to assess it.
 
