@@ -26,9 +26,10 @@ Leanne P. Guy, Gabriele Comoretto
 
 \setDocAbstract{%
 
-This document describes the processes that LSST Data Management will adopt for managing releases of the LSST Science Pipelines software in order to meet the 
-current and future needs of the LSST science community.  These processes should enable early adopters to effectively work with the LSST science piplines in developing user software for science exploitation and data challenges  and contribute to the LSST software.  We outline the processes needed in DM to meet these requirements. 
-
+This document describes the processes that LSST Data Management will adopt for managing 
+DM Software Products release in order to meet the current and future needs of the LSST science program.
+These processes will facilitate contrinutions from the science community and ensure proper LSST DM operations.  
+%These processes should enable early adopters to effectively work with the LSST science piplines in developing user software for science exploitation and data challenges  and contribute to the LSST software.  We outline the processes needed in DM to meet these requirements. 
 }
 
 % Change history defined here.
@@ -36,7 +37,8 @@ current and future needs of the LSST science community.  These processes should 
 % Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
 % See LPM-51 for version number policy.`
 \setDocChangeRecord{%
-  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{Leanne P. Guy}
+  \addtohist{}{2019-04-22}{Definitions and Requirements}{G. Comoretto}
+  \addtohist{}{2018-12-03}{First draft}{Leanne P. Guy, G. Comoretto}
 }
 
 \begin{document}
@@ -47,10 +49,18 @@ current and future needs of the LSST science community.  These processes should 
 
 % ADD CONTENT HERE ... a file per section can be good for editing
 \input{introduction}
+
+\newpage
 \input{requirements}
+
+\newpage
 \input{process}
 
 \appendix
+
+%definitions. This could be moved in the main part pf the document
+\include{definitions}
+
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
 \section{References} \label{sec:bib}
