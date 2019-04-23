@@ -1,48 +1,49 @@
 \section{Requirements} \label{sec:reqs}
 
-The LSST DM Software Products have different stakeholders.
-Each of them that may have specific requirements in terms of release.
+Software produced in LSST Data Management has different stakeholders, that may have different requirements in terms of release.
+In this section we try to give an overview of the release requirements for each of them.
 
 
 \subsection{Requirements from the community } \label{sec:comreqs}
 
 To be able to update to stable bugfix releases in a timely manner
-To be able to move to verions with new finctionality in a time;y manner.
+To be able to move to versions with new functionality in a time;y manner.
 To do this in a stable manner (not breaking API changes, schema changes,
 
-\textit{ I would suggest that the science community do not use official releases, but stable distributions.
-In this way, it will be much easier to make available new functionalities and fixes in a controlled way 
-but witout formalities.
+\textit{ I would suggest that the science community do not require official releases, but stable distributions.
+In this way, it will be much easier to make available new distributions that include expected fixes,
+but do not require formal releases.
 To note also, that what the science community is more interested is the availability of the Science Pipelines,
 that in reality is not a SW product but a distribution, that includes many more object than just SW Products.  }
 
 The appendices for the \appref{sec:bib} and \appref{sec:acronyms} are defined in the main file LDM-672.tex.
 
-The main bibliography file is in the lsst-texmf/texmf/bibtex/bib so you can refer 
+The main bibliography file is in the lsst-texmf/texmf/bibtex/bib so you can refer
 to documents such as \citeds{LDM-294} (from lsst.bib)  or papers like \cite{2008arXiv0805.2366I} (from refs\_ads.bib). You may make a PR to add new refs to these files.
 
 Acronyms like BOE and BAC will be picked up by generateAcronyms.py which is in lsst-texmf/bin -- that needs to be in the PATH.
 
 
-\subsection{Processing Release Requirements} \label{sec:procreqs}
+\subsection{Requirements from operations} \label{sec:procreqs}
 
-NCSA is in charge to host and operate the data processing.
+The Science Operations Department will be  in charge  of the data processing in operations. Software for the various pipelines
+will be hosted at NCSA,IN2P3 and in Chile.
 
-DM developed software, released for NCSA processing, will depend on the specific processing need.
+Software  releases for processing  will depend on the specific needs.
 
 Release frequencies depends on the processing type:
 
 \begin{itemize}
-\item prompt processing has to answer quickly to request for changes, that can happen on a daily bases (official releases)
- or more frequent patch release in case of problems.
-\item DRP processing may have a more relaxed schedule, for example on yearly, and can ben rehearsed before running the formal processing.
+\item prompt processing must reposed quickly to issues, that could happen on a daily bases at least in the early days (official releases)
+ or a  patch release  for a specific problem may be required during the night (this would require sign off from the AD for Science Operations).  .
+\item DRP processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
+\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
 \end{itemize}
 
-\textbf{Release Requirement: In order to properly set-up the release process, 
-the SW products to operate need to be identified and fully described}
+\textit{In order to properly set-up the release process, the SW products needed by operations need to be identified.}
 
 Patch releases need to be provided with a frequency that depends on the type of processing
-and on the ugency of the problems to be fixed.
+and on the urgency of the problems to be fixed.
 
 
 \subsection{Infrastructure Release Requirements} \label{sec:infreqs}
@@ -51,21 +52,21 @@ A subset of DM software products will not be used for data processing,
 nor will be available to the community for further investigation and contribution to the LSST science.
 One example is the LSP Software Product.
 
-The releases in this cases are oriented to have a stable infrstructure.
-The release candence is n prionciple not tight to processing milestones,
-except in case of new functionality to be provided in a planned mmaner.
+The releases in this cases are oriented to have a stable infrastructure.
+The release cadence is in principle not tight to processing milestones,
+except in case of new functionality to be provided in a planned manner.
 
-Pach releases need to be proveded depending on the severity of the problems to be fixed.
+Pach releases need to be provided depending on the severity of the problems to be fixed.
 
 
-\subsection{Other Release Requiremtns} \label{other:reqs}
+\subsection{Other Release Requirements} \label{other:reqs}
 
 Other LSST subsystem may be consumers of DM software products.
 
-In order for DM to be able to answer correctly to theyr needs, 
+In order for DM to be able to answer correctly to requests for changes,
 it is important to identify the DM Software Products used operationally by other subsystems.
 
 \newpage
 \section{General Considerations} \label{sec:considerations}
 
-The section outlines needs and usage of the LSST science community that drive the definition of the processes 
+The section outlines needs and usage of the LSST science community that drive the definition of the processes
