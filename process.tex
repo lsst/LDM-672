@@ -8,10 +8,10 @@ The release process will be as follows:
 \item Major and minor releases will be planned and approved by the DM-CCB. 
 \begin{itemize}
   \item It is recommended that the DM-CCB provide on a yearly base a release plan with a tentative schedule and release content.
-  \item The DM-CCB will monitor and approve or reject the content of each release. This will be done ensuring that all RFC that impacts a release content are approved by the DM-CCB.
+  \item The DM-CCB will monitor and approve or reject the content of each release. This will be done ensuring that all RFC that impacts a release content are properly escalated.
 \end{itemize}
-\item All releases will be clearly identified in Jira using the Jira functionality. 
-If this is not available, a {\it Release Issue} will be created and all issues that are blocking the release will be related as blocker to it. 
+\item All releases will be clearly identified in Jira using the Jira \textbf{Fix In Version(s)} field. 
+If this is not available, a \textit{Release Issue} will be created and all issues that are blocking the release will be related as blocker to it. 
 \item Any extra releases, major, minor or patch, has to be requested by the release end users to the DM-CCB via RFC. The RFC shall contain:
 \begin{itemize}
   \item reason an extra release
@@ -21,7 +21,7 @@ If this is not available, a {\it Release Issue} will be created and all issues t
 \item The DM-CCB will assess the release request involving the relevant T/CAMs and technical contributor affected. 
 Urgent release request will be approved in 24 hours, non urgent release requests will be approved in one week's time.
 \item The release request may be approved or rejected.
-\item In case of approval, the following information will be added to a comment in the RFC:
+\item In case of approval, the following information will be added in a comment ito the RFC:
 \begin{itemize}
   \item version identification of the release
   \item date the release will be available (an estimation, that may change)
@@ -31,14 +31,14 @@ Urgent release request will be approved in 24 hours, non urgent release requests
 \end{itemize}
 
 
-The DM-CCB will meet every week.
+The DM-CCB meets every week.
 
 Technical aspects and roles (who does what) are addressed int following documents:
 
 \begin{itemize}
 \item {\bf regular development}: in the \href{https://developer.lsst.io/}{developer guide}
 \item {\bf fix porting}: in the \href{https://developer.lsst.io/}{developer guide}
-\item {\bf release documentation}: in the \href{https://developer.lsst.io/}{developer guide} or a different document
+\item {\bf release note documentation}: in the \href{https://developer.lsst.io/}{developer guide} or a different document
 \item {\bf release engineering}: in the DMTN-106 (still draft). \href{https://sqr-016.lsst.io/}{SQR-016} is used for the science pipelines release.
 \end{itemize}
 
@@ -69,5 +69,5 @@ Build, CI and validation time are depending from the infrastructure, architectur
 In the case a very urgent release is required, that can't wait a formal approval of the DM-CCB (24 hours), 
 a quick decision can be taken by the DMPM and a requested fix can be implemented and released immediatelly, if feaseble.
 
-However, a RFC need to be filed, a posteriori, and the DM-CCB is required to assess it.
+However, a RFC has to be filed, a posteriori, and the DM-CCB is required to assess it.
 

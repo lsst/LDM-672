@@ -1,7 +1,7 @@
 \section{Requirements} \label{sec:reqs}
 
-Software producted in LSST Data Management has different stakeholders, that may have different requirements in terms of release.
-In this section we try to give an overview of the release requirements for each of them.
+The LSST DM Software Products have different stakeholders.
+Each of them that may have specific requirements in terms of release.
 
 
 \subsection{Requirements from the community } \label{sec:comreqs}
@@ -10,11 +10,11 @@ To be able to update to stable bugfix releases in a timely manner
 To be able to move to verions with new finctionality in a time;y manner.
 To do this in a stable manner (not breaking API changes, schema changes,
 
-\textit{ I would suggest that the science community do not require official releases, but stable distributions.
-In this way, it will be much easier to make available new distributions that include expected fixes, 
-but do not require formal releses.
+\textit{ I would suggest that the science community do not use official releases, but stable distributions.
+In this way, it will be much easier to make available new functionalities and fixes in a controlled way 
+but witout formalities.
 To note also, that what the science community is more interested is the availability of the Science Pipelines,
-that in reality is not a SW produce but a distribution, that includes many more object.  }
+that in reality is not a SW product but a distribution, that includes many more object than just SW Products.  }
 
 The appendices for the \appref{sec:bib} and \appref{sec:acronyms} are defined in the main file LDM-672.tex.
 
@@ -28,7 +28,7 @@ Acronyms like BOE and BAC will be picked up by generateAcronyms.py which is in l
 
 NCSA is in charge to host and operate the data processing.
 
-DM developed software released for NCSA processing will depend on the specific processing need.
+DM developed software, released for NCSA processing, will depend on the specific processing need.
 
 Release frequencies depends on the processing type:
 
@@ -38,7 +38,8 @@ Release frequencies depends on the processing type:
 \item DRP processing may have a more relaxed schedule, for example on yearly, and can ben rehearsed before running the formal processing.
 \end{itemize}
 
-\textit{In order to properly set-up the release process, the SW products to operate need to be identified}
+\textbf{Release Requirement: In order to properly set-up the release process, 
+the SW products to operate need to be identified and fully described}
 
 Patch releases need to be provided with a frequency that depends on the type of processing
 and on the ugency of the problems to be fixed.
@@ -48,7 +49,7 @@ and on the ugency of the problems to be fixed.
 
 A subset of DM software products will not be used for data processing,
 nor will be available to the community for further investigation and contribution to the LSST science.
-One example if the software required to implement the LSP.
+One example is the LSP Software Product.
 
 The releases in this cases are oriented to have a stable infrstructure.
 The release candence is n prionciple not tight to processing milestones,
@@ -61,7 +62,7 @@ Pach releases need to be proveded depending on the severity of the problems to b
 
 Other LSST subsystem may be consumers of DM software products.
 
-In order for DM to be able to answer correctly to requests for changes, 
+In order for DM to be able to answer correctly to theyr needs, 
 it is important to identify the DM Software Products used operationally by other subsystems.
 
 \newpage
