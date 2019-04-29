@@ -1,10 +1,10 @@
 \section{Requirements} \label{sec:reqs}
 
-Software produced in LSST Data Management has different stakeholders, that may have different requirements in terms of release.
-In this section we try to give an overview of the release requirements for each of them.
+The LSST Data Management Software Products have different stakeholders.
+Each of them has different requirements in terms of release.
 
 
-\subsection{Requirements from the community } \label{sec:comreqs}
+\subsection{Release Requirements for the Science Community } \label{sec:comreqs}
 
 To be able to update to stable bugfix releases in a timely manner
 To be able to move to versions with new functionality in a time;y manner.
@@ -24,12 +24,10 @@ to documents such as \citeds{LDM-294} (from lsst.bib)  or papers like \cite{2008
 Acronyms like BOE and BAC will be picked up by generateAcronyms.py which is in lsst-texmf/bin -- that needs to be in the PATH.
 
 
-\subsection{Requirements from operations} \label{sec:procreqs}
+\subsection{Release Requirements for Operations} \label{sec:procreqs}
 
 The Science Operations Department will be  in charge  of the data processing in operations. Software for the various pipelines
 will be hosted at NCSA,IN2P3 and in Chile.
-
-Software  releases for processing  will depend on the specific needs.
 
 Release frequencies depends on the processing type:
 
@@ -46,7 +44,7 @@ Patch releases need to be provided with a frequency that depends on the type of 
 and on the urgency of the problems to be fixed.
 
 
-\subsection{Infrastructure Release Requirements} \label{sec:infreqs}
+\subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
 
 A subset of DM software products will not be used for data processing,
 nor will be available to the community for further investigation and contribution to the LSST science.
@@ -63,8 +61,10 @@ Pach releases need to be provided depending on the severity of the problems to b
 
 Other LSST subsystem may be consumers of DM software products.
 
-In order for DM to be able to answer correctly to requests for changes,
-it is important to identify the DM Software Products used operationally by other subsystems.
+In order for DM to be able to answer correctly to their needs,
+it is important to identify the DM Software Products used by other subsystems,
+and how they are used.
+
 
 \newpage
 \section{General Considerations} \label{sec:considerations}
