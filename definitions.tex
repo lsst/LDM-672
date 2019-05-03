@@ -1,6 +1,6 @@
 \section{Definitions} \label{sec:defs}
 
-The following definitions need to be taken in account.
+The following definitions should to be taken in account when defining or working with the release process.
 
 
 \subsection{Environment} \label{sec:envdef}
@@ -33,7 +33,7 @@ The following activities are done on a SW Product:
 \item operational activities, in stand alone mode, in an operational pipeline or as part of a service. Some SW Products are libraries, therefore are not operationally, but used as dependencies by other Software Products.
 \end{itemize}
 
-A Software Product shall correspond to a single repository. 
+A Software Product shall correspond to a single repository.
 In other  words, there shall be a correspondence \textit{1:1} between Software Products and git packages.
 All the Software Product's dependences are different Software Products and therefore released separately.
 
@@ -41,7 +41,7 @@ This is not the case of DM, where a Software Product is comprised of multiple gi
 The compromised solution in this case is to have a GitHub \textit{metapackage} that identifies the Software Product.
 All git packages composing the Software Product are dependencies in a GitHub \textit{metapackage} and released at the same time.
 In this case, a git package shall be related only to one Software Product, and it is not by himself a Software Product.
-In other words, there is a correspondence \textit{1:many} between Software Product and Git packages. 
+In other words, there is a correspondence \textit{1:many} between Software Product and Git packages.
 There shall never be a \textit{many:many} correspondence.
 
 The following elements should not be part of a Software Product:
@@ -60,7 +60,7 @@ The content of this subsection is a \textit{prerequisite} for any release proced
 
 \subsection{Software Release} \label{sec:defrelease}
 
-A software release is a consciously identified tag of a Software Product repository documented with a software release note.
+A software release is a consciously identified tag of a software product repository documented with a software release note.
 The identifier is usually of the form \texttt{M.n.p}.
 
 The tag in the Github repository and the software release note shall be sufficient to identify the release, and therefore for a developer
@@ -101,8 +101,8 @@ A distribution can be used for different purposes:
 
 Distributions may also include non binary packages, build tools, test data or source code, as needed.
 
-Depending on the purpose, the packages included in a distribution may not correspond to a specific software release. 
-For example for test purposes, a release candidate can be used instead or, during commissioning, 
-it may be necessary to deploy packages on the fly a package including changes just made in the repository,
+Depending on the purpose, the packages included in a distribution may not correspond to a specific software release.
+For example for test purposes, a release candidate can be used instead or, during commissioning,
+it may be necessary to deploy on the fly a package including changes just made in the repository,
 identified by the corresponding revision.
 
