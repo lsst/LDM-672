@@ -1,6 +1,6 @@
 \section{Requirements} \label{sec:reqs}
 
-Software products in LSST Data Management has different stakeholders, that may have different requirements in terms of release.
+Software products in \gls{LSST} Data Management has different stakeholders, that may have different requirements in terms of release.
 In this section we try to give an overview of the release requirements for each of them.
 
 
@@ -8,29 +8,29 @@ In this section we try to give an overview of the release requirements for each 
 
 To be able to update to stable bugfix releases in a timely manner
 To be able to move to versions with new functionality in a time;y manner.
-To do this in a stable manner (not breaking API changes, schema changes,
+To do this in a stable manner (not breaking \gls{API} changes, schema changes,
 
 \textit{ I would suggest that the science community do not require official releases, but stable distributions.
 In this way, it will be much easier to make available new distributions that include expected fixes,
 but do not require formal releases.
 To note also, that what the science community is more interested is the availability of the Science Pipelines,
-that in reality is not a SW produce but a distribution, that includes many more object.  }
+that in reality is not a \gls{SW} produce but a distribution, that includes many more object.  }
 
 \subsection{Release Requirements for Operations} \label{sec:procreqs}
 
 The Science Operations Department will be  in charge  of the data processing in operations. Software for the various pipelines
-will be hosted at NCSA,IN2P3 and in Chile.
+will be hosted at \gls{NCSA},IN2P3 and in Chile.
 
 Release frequencies depend on the processing type:
 
 \begin{itemize}
 \item prompt processing must reposed quickly to issues, that could happen on a daily bases at least in the early days (official releases)
  or a  patch release  for a specific problem may be required during the night (this would require sign off from the AD for Science Operations).  .
-\item DRP processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
+\item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
 \item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
 \end{itemize}
 
-\textit{In order to properly set-up the release process, the SW products to operate need to be identified}
+\textit{In order to properly set-up the release process, the \gls{SW} products to operate need to be identified}
 
 Patch releases need to be provided with a frequency that depends on the type of processing
 and on the urgency of the problems to be fixed.
@@ -38,9 +38,9 @@ and on the urgency of the problems to be fixed.
 
 \subsection{Infrastructure Release Requirements} \label{sec:infreqs}
 
-A subset of DM software products will not be used for data processing,
-nor will be available to the community for further investigation and contribution to the LSST science.
-One example if the software required to implement the LSP.
+A subset of \gls{DM} software products will not be used for data processing,
+nor will be available to the community for further investigation and contribution to the \gls{LSST} science.
+One example if the software required to implement the \gls{LSP}.
 
 The releases in this cases are oriented to have a stable infrastructure.
 The release cadence is n principle not tight to processing milestones,
@@ -50,10 +50,10 @@ Pach releases need to be provided depending on the severity of the problems to b
 
 
 
-Other LSST subsystem may be consumers of DM software products.
+Other \gls{LSST} subsystem may be consumers of \gls{DM} software products.
 
-In order for DM to be able to answer correctly to their needs,
-it is important to identify the DM Software Products used by other subsystems,
+In order for \gls{DM} to be able to answer correctly to their needs,
+it is important to identify the \gls{DM} Software Products used by other subsystems,
 and how they are used.
 
 

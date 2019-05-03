@@ -22,22 +22,22 @@ In some cases, for simplicity, the same environment is used in development, test
 
 \subsection{Software Product} \label{sec:swdef}
 
-A Software Product is a component of the subsystem (DM) product tree.
+A Software Product is a component of the subsystem (\gls{DM}) product tree.
 
-The following activities are done on a SW Product:
+The following activities are done on a \gls{SW} Product:
 \begin{itemize}
 \item development activities
 \item test activities, usually unit tests and system test
 \item release activities
 \item packaging activities
-\item operational activities, in stand alone mode, in an operational pipeline or as part of a service. Some SW Products are libraries, therefore are not operationally, but used as dependencies by other Software Products.
+\item operational activities, in stand alone mode, in an operational pipeline or as part of a service. Some \gls{SW} Products are libraries, therefore are not operationally, but used as dependencies by other Software Products.
 \end{itemize}
 
 A Software Product shall correspond to a single repository.
 In other  words, there shall be a correspondence \textit{1:1} between Software Products and git packages.
 All the Software Product's dependencies are different Software Products and therefore released separately.
 
-This is not the case of DM, where a Software Product is comprised of multiple git packages.
+This is not the case of \gls{DM}, where a Software Product is comprised of multiple git packages.
 The compromised solution in this case is to have a GitHub \textit{metapackage} that identifies the Software Product.
 All git packages composing the Software Product are dependencies in a GitHub \textit{metapackage} and released at the same time.
 In this case, a git package shall be related only to one Software Product, and it is not by himself a Software Product.
@@ -73,14 +73,14 @@ That checksum can be used to identify the release installed in an environment, o
 
 \subsection{Third Party Packages}
 
-Third party packages are those packages that are not developed in DM, and follow their own documentation and release process.
+Third party packages are those packages that are not developed in \gls{DM}, and follow their own documentation and release process.
 
 
 \subsection{Binary Packages} \label{sec:swbpkg}
 
 A binary package is a package containing executable for the corresponding release.
-It is created by building the SW provided in the release tag.
-Binary packages can be created to support multiple platforms (such as Linux, OSX, windows) if required.
+It is created by building the \gls{SW} provided in the release tag.
+Binary packages can be created to support multiple platforms (such as Linux, \gls{OSX}, windows) if required.
 
 In some cases, these packages do not contain compiled binaries, but executable scripts or just text files.
 

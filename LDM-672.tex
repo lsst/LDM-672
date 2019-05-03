@@ -4,6 +4,9 @@
 
 % Package imports go here.
 
+\input{aglossary.tex}
+\makeglossaries
+
 % Local commands go here.
 
 % To add a short-form title:
@@ -26,9 +29,9 @@ Leanne P. Guy, Gabriele Comoretto
 
 \setDocAbstract{%
 
-This document describes the processes that LSST Data Management will adopt for managing
-DM Software Products release in order to meet the current and future needs of the LSST science program.
-These processes will facilitate contrinutions from the science community and ensure proper LSST DM operations.
+This document describes the processes that \gls{LSST} Data Management will adopt for managing
+DM Software Products release in order to meet the current and future needs of the \gls{LSST} science program.
+These processes will facilitate contrinutions from the science community and ensure proper \gls{LSST} \gls{DM} operations.
 %These processes should enable early adopters to effectively work with the LSST science piplines in developing user software for science exploitation and data challenges  and contribute to the LSST software.  We outline the processes needed in DM to meet these requirements.
 }
 
@@ -67,6 +70,6 @@ These processes will facilitate contrinutions from the science community and ens
 \bibliography{lsst,lsst-dm,refs_ads,refs,books}
 
 %Make sure lsst-texmf/bin/generateAcronyms.py is in your path
-\section{Acronyms used in this document}\label{sec:acronyms}
-\input{acronyms.tex}
+\printglossaries
+
 \end{document}
