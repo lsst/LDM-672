@@ -1,0 +1,108 @@
+\section{Definitions} \label{sec:defs}
+
+The following definitions should to be taken in account when defining or working with the release process.
+
+
+\subsection{Environment} \label{sec:envdef}
+
+An environment is a set of libraries, executables and configurations, that are predefined for a specific context or function.
+
+An environment is usually needed in the following contexts:
+
+\begin{itemize}
+\item software development: the environment includes all libraries and tools required to build and debug a software product
+\item software test and verification: the environment includes, on top of build and debug tools, additional tools to permit/facilitate the testing and validation activities.
+\item operations: the environment shall include only tools required for the execution of the operational products. It shall not contain any build or debug tool. It shall be optimized for the operational activities. \footnote{In case a problem is found in operation the first thing to do is to replicate it in a different environment, where also debug and further analysis is possible.}
+\end{itemize}
+
+These are the most common uses of an environment. Additional scenarios can be identified depending on the needs.
+
+In some cases, for simplicity, the same environment is used in development, tests and operations, but this does not justify the inclusion of the environment definition in the Software Product itself.
+
+
+\subsection{Software Product} \label{sec:swdef}
+
+A Software Product is a component of the subsystem (\gls{DM}) product tree.
+
+The following activities are done on a \gls{SW} Product:
+\begin{itemize}
+\item development activities
+\item test activities, usually unit tests and system test
+\item release activities
+\item packaging activities
+\item operational activities, in stand alone mode, in an operational pipeline or as part of a service. Some \gls{SW} Products are libraries, therefore are not operationally, but used as dependencies by other Software Products.
+\end{itemize}
+
+A Software Product shall correspond to a single repository.
+In other  words, there shall be a correspondence \textit{1:1} between Software Products and git packages.
+All the Software Product's dependencies are different Software Products and therefore released separately.
+
+This is not the case of \gls{DM}, where a Software Product is comprised of multiple git packages.
+The compromised solution in this case is to have a GitHub \textit{metapackage} that identifies the Software Product.
+All git packages composing the Software Product are dependencies in a GitHub \textit{metapackage} and released at the same time.
+In this case, a git package shall be related only to one Software Product, and it is not by himself a Software Product.
+In other words, there is a correspondence \textit{1:many} between Software Product and Git packages.
+There shall never be a \textit{many:many} correspondence.
+
+The following elements should not be part of a Software Product:
+
+\begin{itemize}
+\item build tools, otherwise we will have build tools deployed in operations.
+\item environment definition, since the environment depends on the final instantiation of the Software Product that are not visible in the development phase.
+\end{itemize}
+
+These elements shall follow a parallel development / release process.
+
+Test data should also not be included in a Software Product. However including small datasets for enabling the unit tests is not a bad practice.
+
+The content of this subsection is a \textit{prerequisite} for any release procedure to be applied.
+
+
+\subsection{Software Release} \label{sec:defrelease}
+
+A software release is a consciously identified tag of a software product repository documented with a software release note.
+The identifier is usually of the form \texttt{M.n.p}.
+
+The tag in the Github repository and the software release note shall be sufficient to identify the release, and therefore for a developer
+to resolve the dependencies, build the binaries and execute the software.
+
+The software release is a monolithic snapshot of the Software Product to be used as is, or in its corresponding binary package(s), by the downstream processes or users.
+In theory, it should be possible to identify the release with a checksum calculated automatically on the delivered package.
+That checksum can be used to identify the release installed in an environment, or included in a distribution.
+
+
+\subsection{Third Party Packages}
+
+Third party packages are those packages that are not developed in \gls{DM}, and follow their own documentation and release process.
+
+
+\subsection{Binary Packages} \label{sec:swbpkg}
+
+A binary package is a package containing executable for the corresponding release.
+It is created by building the \gls{SW} provided in the release tag.
+Binary packages can be created to support multiple platforms (such as Linux, \gls{OSX}, windows) if required.
+
+In some cases, these packages do not contain compiled binaries, but executable scripts or just text files.
+
+Binaries should be generated only once, and made available for their use by dependent software or for deployment.
+
+
+\subsection{Distribution} \label{sec:distribution}
+
+A distribution is a collection of well identified binary packages to be deployed together.
+
+A distribution can be used for different purposes:
+
+\begin{itemize}
+\item to make available software releases for operations or commissioning
+\item to test (integration, validation, operation rehearsals) software releases
+\item to provide software releases to external collaborators. In this case source code can be distributed instead of binaries.
+\end{itemize}
+
+Distributions may also include non binary packages, build tools, test data or source code, as needed.
+
+Depending on the purpose, the packages included in a distribution may not correspond to a specific software release.
+For example for test purposes, a release candidate can be used instead or, during commissioning,
+it may be necessary to deploy on the fly a package including changes just made in the repository,
+identified by the corresponding revision.
+

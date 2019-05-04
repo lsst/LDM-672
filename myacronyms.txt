@@ -21,3 +21,4 @@ EIE:European Industrial Engineering  - Italian engineering company (Dome)
 LDM:LSST Data Management (document handle)
 PSTN:Project Science Technical Note
 
+AD:Associate Director
