@@ -4,10 +4,10 @@ Software products in \gls{LSST} Data Management has different stakeholders, that
 In this section we try to give an overview of the release requirements for each of them.
 
 
-\subsection{Requirements from the community } \label{sec:comreqs}
+\subsection{Release Requirements for Science Community } \label{sec:comreqs}
 
 To be able to update to stable bugfix releases in a timely manner
-To be able to move to versions with new functionality in a time;y manner.
+To be able to move to versions with new functionality in a timely manner.
 To do this in a stable manner (not breaking \gls{API} changes, schema changes,
 
 \textit{ I would suggest that the science community do not require official releases, but stable distributions.
@@ -24,19 +24,19 @@ will be hosted at \gls{NCSA},IN2P3 and in Chile.
 Release frequencies depend on the processing type:
 
 \begin{itemize}
-\item prompt processing must reposed quickly to issues, that could happen on a daily bases at least in the early days (official releases)
- or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science Operations).  .
+\item prompt processing requires releases to be available very quick, that could happen on a daily bases, especially in the early days (official releases)
+ or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science Operations).
 \item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
 \item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
 \end{itemize}
 
-\textit{In order to properly set-up the release process, the \gls{SW} products to operate need to be identified}
+\textit{In order to properly set-up the release process, the \gls{SW} products to operate need to be well identified}
 
 Patch releases need to be provided with a frequency that depends on the type of processing
 and on the urgency of the problems to be fixed.
 
 
-\subsection{Infrastructure Release Requirements} \label{sec:infreqs}
+\subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
 
 A subset of \gls{DM} software products will not be used for data processing,
 nor will be available to the community for further investigation and contribution to the \gls{LSST} science.
@@ -46,14 +46,28 @@ The releases in this cases are oriented to have a stable infrastructure.
 The release cadence is n principle not tight to processing milestones,
 except in case of new functionality to be provided in a planned manner.
 
-Pach releases need to be provided depending on the severity of the problems to be fixed.
+Patch releases need to be provided depending on the severity of the problems to be fixed.
 
 
+\subsection{Other Release Requirements} \label{sec:otherreqs}
 
 Other \gls{LSST} subsystem may be consumers of \gls{DM} software products.
 
 In order for \gls{DM} to be able to answer correctly to their needs,
 it is important to identify the \gls{DM} Software Products used by other subsystems,
 and how they are used.
+
+
+\subsection{Release Requirements for non Operational Activities} \label{sec:nonopsreqs}
+
+Activities done in preparation to operations, like for example commissioning or 
+large scale integration/validation test campaigns, shall use as much as possible officially released software.
+
+However, it shall be possible in case of need, to use non released software, like for example release candidates or stable builds.
+In all cases, the software used shall always be well identified (Github revision at least), and the distribution / deployment strictly controlled.
+
+
+
+
 
 

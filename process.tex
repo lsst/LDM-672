@@ -10,13 +10,11 @@ The release process will be as follows:
   \item  DM-CCB will provide  a release plan identifying  milestones requiring software releases.
   \item The DM-CCB will monitor and approve or reject the content of each release. DM-CCB will ensure that  all RFCs that impact  release content are properly escalated.
 \end{itemize}
-%\item All releases will be clearly identified in Jira using the Jira \textbf{Fix In Version(s)} field.
-If this is not available, a \textit{Release Issue} will be created and all issues that are blocking the release will be related as blocker to it.
 \item Any extra releases, major, minor or patch, has to be requested by the release end users to the DM-CCB via \gls{RFC}. The \gls{RFC} shall contain:
 \begin{itemize}
-  \item reason an extra release
-  \item list of features or fixes which are quested to be implemented in the release
-  \item date the release is requested to be available and specify the urgency.
+  \item the reason for an extra release
+  \item the list of features or fixes which are requested to be implemented in the release
+  \item the date the release is requested to be available and specify the urgency.
 \end{itemize}
 \item The DM-CCB will assess the release request involving the relevant T/CAMs and technical contributor affected.
 Urgent release request will be approved in 24 hours, non urgent release requests will be approved in one week's time.
@@ -41,27 +39,6 @@ Technical aspects and roles (who does what) are addressed int following document
 \item {\bf release note documentation}: in the \href{https://developer.lsst.io/}{developer guide} or a different document
 \item {\bf release engineering}: in the DMTN-106 (still draft). \href{https://sqr-016.lsst.io/}{SQR-016} is used for the science pipelines release.
 \end{itemize}
-
-
-\subsection{Release Timing}
-
-Preparing a release is a complex process.
-The time needed to complete it depends on many factors:
-
-\begin{itemize}
-\item assessment and development time
-\item build, continuous integration (\gls{CI}) and validation time
-\item communication delays
-\item \gls{CCB} process time
-\end{itemize}
-
-This list is not complete. Other unexpected factors may enter in the loop.
-
-Defining a clear process, as done in this document, will help to reduce to the minimum the communication delays and \gls{CCB} process time.
-
-Technical time, needed to assess and develop the solution, may be very difficult to reduce.
-
-Build, \gls{CI} and validation time are depending from the infrastructure, architecture and tooling used.
 
 
 \subsection{Urgent Releases}
