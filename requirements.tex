@@ -1,30 +1,35 @@
 \section{Requirements} \label{sec:reqs}
 
-Software products in \gls{LSST} Data Management has different stakeholders, that may have different requirements in terms of release.
-In this section we try to give an overview of the release requirements for each of them.
+There are several different stakeholders of the \gls{LSST} \gls{DM} software products, each of whom may have different requirements for releases.
+In this section we give an overview of their respective requirements on  \gls{DM} software product releases.
 
 To be kept in mind that the content of a release, must be well understood and documented in the corresponding release note.
 
+\subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
 
-\subsection{Release Requirements for Science Community } \label{sec:comreqs}
+In preparation for working with the \gls{LSST} data products and software during operations, several \gls{LSST} science collaborations have begun using the \gls{DM} software to run data challenges using precursor data or simulations, and to do performance studies. These activities effectively increase the number of beta-testers of \gls{DM} software products, providing valuable feedback to \gls{DM} on the state of the system. 
 
-To be able to update to stable bugfix releases in a timely manner
-To be able to move to versions with new functionality in a timely manner.
-To do this in a stable manner (not breaking \gls{API} changes, schema changes,
+In order to work effectively with the \gls{DM} software while it is still under development, the science community require: 
+\begin{itemize}
+\item stable public APIs and schemas in order to build software for User-Generated analyses, 
+\item timely access new functionality,  
+\item patches and bug fixes back-ported to the current stable version of the software. 
+\end{itemize}
 
-\textit{ I would suggest that the science community do not require official releases, but stable distributions.
-In this way, it will be much easier to make available new distributions that include expected fixes,
-but do not require formal releases.
-To note also, that what the science community is more interested is the availability of the Science Pipelines,
-that in reality is not a \gls{SW} produce but a distribution, that includes many more object.  }
+Back-porting bug fixes to the current stable version of the software will entail extra work for \gls{DM}. 
+As not all bug fixes are needed by the science community, a process by which essential bug fixes only are back-ported to the current stable version should be adopted. 
+New functionality often necessitates new or modified APIs or schemas. 
+In such cases, a mechanism for deprecation should be adopted to allow the user community to adapt their codes on an appropriate timescale.  
 
-\subsection{Release Requirements for Operations} \label{sec:procreqs}
+The \gls{DM} Science Team will liaise with the \gls{LSST} science community to understand their needs concerning \gls{DM} software product releases. 
+Requests for new functionality or back-ported bug fixes to include in forthcoming \gls{DM} software product releases will be communicated to \gls{DM} via a \gls{RFC}, coordinated either by the DM-SST liaison to the science collaboration or a nominated person within the science collaboration who will coordinate requests and raise an \gls{RFC}. 
 
-The Science Operations Department will be  in charge  of the data processing in operations. Software for the various pipelines
-will be hosted at \gls{NCSA},IN2P3 and in Chile.
+\subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
 
-Release frequencies depend on the processing type:
+The Science Operations Department will be in charge of  data processing in operations. 
+Software for the various pipelines will be hosted at \gls{NCSA},IN2P3 and in Chile.
 
+Release frequencies will depend on the processing type:
 \begin{itemize}
 \item prompt processing requires releases to be available very quick, that could happen on a daily bases, especially in the early days (official releases)
  or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science Operations).
@@ -37,6 +42,10 @@ Release frequencies depend on the processing type:
 Patch releases need to be provided with a frequency that depends on the type of processing
 and on the urgency of the problems to be fixed.
 
+\subsection{Release Requirements for \gls{LSST} Subsystems in Operations.} \label{sec:otherreqs}
+
+Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the \gls{TS} subsystem software makes use of the \gls{DM} software products to run  \gls{TS} software. 
+In order for \gls{DM} to be able to respond correctly to the needs of other \gls{LSST} subsystems, it is important to first identify which \gls{DM} Software Products are used, and how they are used.
 
 \subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
 
@@ -47,27 +56,11 @@ Releases of this type of software are typically on their own cadence and need to
 Patch releases may need to be provided depending on the urgency and severity of the problems to be fixed.
 
 
+\subsection{Release Requirements for non-Operational Project Activities} \label{sec:nonopsreqs}
 
+This includes activities done in preparation for operations, such as commissioning, 
+large scale integration/validation test campaigns, etc. These activities should use use,  as much as possible,  officially released software.
 
-\subsection{Other Release Requirements} \label{sec:otherreqs}
-
-Other \gls{LSST} subsystem may be consumers of \gls{DM} software products.
-
-In order for \gls{DM} to be able to answer correctly to their needs,
-it is important to identify the \gls{DM} Software Products used by other subsystems,
-and how they are used.
-
-
-\subsection{Release Requirements for non Operational Activities} \label{sec:nonopsreqs}
-
-Activities done in preparation to operations, like for example commissioning or 
-large scale integration/validation test campaigns, shall use as much as possible officially released software.
-
-However, it shall be possible in case of need, to use non released software, like for example release candidates or stable builds.
-In all cases, the software used shall always be well identified (Github revision at least), and the distribution / deployment strictly controlled.
-
-
-
-
-
+In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
+In all cases, the software used must be clearly identified (Github revision at least), and the distribution/deployment strictly controlled.
 
