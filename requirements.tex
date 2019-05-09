@@ -3,7 +3,7 @@
 There are several different stakeholders of the \gls{LSST} \gls{DM} software products, each of whom may have different requirements for releases.
 In this section we give an overview of their respective requirements on  \gls{DM} software product releases.
 
-To be kept in mind that the content of a release, must be well understood and documented in the corresponding release note.
+%To be kept in mind that the content of a release, must be well understood and documented in the corresponding release note.
 
 \subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
 
@@ -23,6 +23,7 @@ In such cases, a mechanism for deprecation should be adopted to allow the user c
 
 The \gls{DM} Science Team will liaise with the \gls{LSST} science community to understand their needs concerning \gls{DM} software product releases. 
 Requests for new functionality or back-ported bug fixes to include in forthcoming \gls{DM} software product releases will be communicated to \gls{DM} via a \gls{RFC}, coordinated either by the DM-SST liaison to the science collaboration or a nominated person within the science collaboration who will coordinate requests and raise an \gls{RFC}. 
+
 
 \subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
 
@@ -44,8 +45,9 @@ and on the urgency of the problems to be fixed.
 
 \subsection{Release Requirements for \gls{LSST} Subsystems in Operations.} \label{sec:otherreqs}
 
-Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products to run  \gls{TS} software. 
+Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products as dependencies. 
 In order for \gls{DM} to be able to respond correctly to the needs of other \gls{LSST} subsystems, it is important to first identify which \gls{DM} software products are used, and how they are used.
+
 
 \subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
 
@@ -64,3 +66,10 @@ large scale integration/validation test campaigns, etc. These activities should 
 In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
 In all cases, the software used must be clearly identified (Github revision at least), and the distribution/deployment strictly controlled.
 
+
+\subsection{Assessment} \label{sec:assessment}
+
+As a first glance, it seems  that major releases need to be done more on a feature or milestone bases. 
+
+However before this assessment need further evaluation and clearly identify which of the above requirements is applicable for each of the software products  in appendix \ref{sec:swptree}.
+This extra information shall be included in MagicDraw and documented in \citeds{DMTN-104}, still draft.
