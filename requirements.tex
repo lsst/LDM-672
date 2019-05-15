@@ -1,13 +1,16 @@
 \section{Requirements} \label{sec:reqs}
 
-There are several different stakeholders of the \gls{LSST} \gls{DM} software products, each of whom may have different requirements for releases.
-In this section we give an overview of their respective requirements on  \gls{DM} software product releases.
+In this section we give an overview of requirements on \gls{DM} software product releases from the different stakeholders.
 
-It is important to identify the correct release policy during contraction phase, in order to have it consolidated when operations starts.
+It is important to identify the correct release policy during construction phase, in order to have it consolidated when operations starts.
 
-Once in operations, some of the LSST subsystems mentioned here may not be relevant anymore, but the policy defined here shall still be applicable, since many of the stakeholders will still expect software releases to be managed properly. 
+In operations, some of the \gls{LSST} subsystems may no longer exist, for example \gls{DM} will not exist per se in operations but \gls{DM} software products, will still exist under other managerial structure.
+The policy defined here will still be applicable, since many of the stakeholders will still expect software releases to be managed in the same manner as during construction.
 
-%To be kept in mind that the content of a release, must be well understood and documented in the corresponding release note.
+
+\subsection{Rease General Requirements} \label{sec:genreq}
+
+All software releases shall be properly documented with a software release note as per definition in \ref{sec:defrelease} and tested before making them available for operations.
 
 
 \subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
@@ -35,11 +38,9 @@ Requests for new functionality or back-ported bug fixes to include in forthcomin
 %The Science Operations Department will be in charge of  data processing in operations. 
 %Software for the various pipelines will be hosted at \gls{NCSA},IN2P3 and in Chile.
 
-The \gls{LDF} will be responsible for generating the needed data products during commissioning and operations. 
+The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations. 
 The \gls{LDF} requires officially released software to be used in production for the various operational activities.
-Software releases shall be properly documented with a software release note as per definition in \ref{sec:defrelease} and tested before making them available for operations.
-Software releases will be run in production at National Center for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile. 
-Additional processing centers may be added to the list.
+Software releases will be run in production at National Center for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
 
 Release frequencies will depend on the processing type:
 \begin{itemize}
@@ -81,7 +82,11 @@ In all cases, the software used must be clearly identified (Github revision at l
 
 \subsection{Assessment} \label{sec:assessment}
 
-As a first glance, it seems  that major releases need to be done more on a feature or milestone bases. 
+As a first glance, it seems that major releases need to be done more on a feature or milestone basis.
 
-However before this assessment need further evaluation and clearly identify which of the above requirements is applicable for each of the software products  in appendix \ref{sec:swptree}.
-This extra information shall be included in MagicDraw and documented in \citeds{DMTN-104}, still draft.
+However before concluding, further evaluation is needed.
+First of all, a unique list of requirements should be derived from the above subsections. 
+Then, it should be possible to identify which of these requirements are applicable for each software product listed in appendix \ref{sec:swptree}.
+This extra information shall be included in MagicDraw and documented in \citeds{DMTN-104}, which still draft.
+
+

@@ -1,19 +1,18 @@
 \section{Introduction} \label{sec:intro}
 
-This document collects the needs in therms of releses from different stakehoders, section \ref{sec:reqs}.
-These needs are presented as requirements, that shall not be confused with project requirements, like for example the \gls{DMS} requirement specification, documented in \citeds{LSE-61}.
-Section \ref{sec:process} provides an overview of the release process.
+This document presents the release policy for \gls{LSST} software based on requirements from the various stakeholders.
+These requirements, detailed in section \ref{sec:reqs}, are not formal project requirements, as given for example in the \gls{DMS} requirements specification \citeds{LSE-61}, but are nevertheless important to ensure the project's goals.
 
-Appedix \ref{sec:defs} provides definitions of the main objects involved in the release activities. 
-Those definitions are given in order to provide a common understanding.
-In the same line, appendix \ref{sec:swptree} gives an overview of the software products part of the \gls{DM}, that are involved in this process.
+Section \ref{sec:process} provides an overview of the release process, as it is documented in \citeds{LDM-294}.
+
+Appedix \ref{sec:defs} provides definitions of the main objects involved in the release activities in order to provide a common understanding. 
+Appendix \ref{sec:swptree} also provides an overview of the software products part of the \gls{DM}, that are involved in this process.
 
 
-\newpage
-\section{Science Pipelines Releases}\label{sec:sci}
+\subsection{Releases Status}\label{sec:sci}
 
-The current situation is that only the Science Pipelines product is released regularly.
-The process in place provides time based builds and releases:
+Currently, only the Science Pipelines product is released. 
+Builds and releases are made on a the following time-based cadence:
 
 \begin{itemize}
 \item Nightly builds
@@ -23,9 +22,9 @@ The process in place provides time based builds and releases:
 
 The time needed to consolidate an official release from a weekly build is considerable.
 Usually 2 or 3 weeks are sufficient but in some cases it may take more than a month. 
-Technical details and problems are given in \citeds{DMTN-106}.
+Consequently, by the time a release becomes available to the users, it is already old.
+For this reason, users generally prefer to work with weekly builds that are sufficiently stable and include all new functionalities completed in the last week.
 
-Due to the time issue, when a release is available to the users, it is already too old.
-For this reason, users prefer in general weekly builds, that are sufficiently stable and include all new functionalities completed in the last week.
-
+The Science Pipelines release checklist is documented in \citeds{SQR-016}.
+The technical note \citeds{DMTN-106}, still draft, generalize the process and summarize the technical problems that need to be solve in order that this procedur can be applied to other software products.
 
