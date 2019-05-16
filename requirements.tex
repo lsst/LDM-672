@@ -40,14 +40,14 @@ Requests for new functionality or back-ported bug fixes to include in forthcomin
 
 The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations. 
 The \gls{LDF} requires officially released software to be used in production for the various operational activities.
-Software releases will be run in production at National Center for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
+Software releases will be run in production at National \gls{Center} for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
 
 Release frequencies will depend on the processing type:
 \begin{itemize}
 \item prompt processing requires releases to be available very quick, that could happen on a daily bases, especially in the early days (official releases)
- or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science Operations).
+ or a  \gls{patch} release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science \gls{Operations}).
 \item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
-\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
+\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a \gls{patch} will be needed immediately.
 \end{itemize}
 
 \textit{In order to properly set-up the release process, the \gls{SW} products to operate need to be well identified}
@@ -56,7 +56,7 @@ Patch releases need to be provided with a frequency that depends on the type of 
 and on the urgency of the problems to be fixed.
 
 
-\subsection{Release Requirements for \gls{LSST} Subsystems in Operations.} \label{sec:otherreqs}
+\subsection{Release Requirements for \gls{LSST} Subsystems in \gls{Operations}.} \label{sec:otherreqs}
 
 Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products as dependencies. 
 In order for \gls{DM} to be able to respond correctly to the needs of other \gls{LSST} subsystems, it is important to first identify which \gls{DM} software products are used, and how they are used.
@@ -64,9 +64,9 @@ In order for \gls{DM} to be able to respond correctly to the needs of other \gls
 
 \subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
 
-A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff but are not directly used to generate \gls{LSST} science data products. An example of this is the software that implements the \gls{LSST} Science Platform (\gls{LSP}).
+A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff but are not directly used to generate \gls{LSST} science data products. An example of this is the software that implements the \gls{LSST} \gls{Science Platform} (\gls{LSP}).
 
-Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure. The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for Data Release processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
+Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure. The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
 
 Patch releases may need to be provided depending on the urgency and severity of the problems to be fixed.
 
@@ -86,7 +86,7 @@ As a first glance, it seems that major releases need to be done more on a featur
 
 However before concluding, further evaluation is needed.
 First of all, a unique list of requirements should be derived from the above subsections. 
-Then, it should be possible to identify which of these requirements are applicable for each software product listed in appendix \ref{sec:swptree}.
-This extra information shall be included in MagicDraw and documented in \citeds{DMTN-104}, which still draft.
+Then, it should be possible to identify which of these requirements are applicable for each software product listed in the \gls{DM} product tree, \citeds{LDM-294}.
+This extra information shall be included in MagicDraw and documented in \citeds{DMTN-104}, which is still draft.
 
 
