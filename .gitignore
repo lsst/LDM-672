@@ -104,6 +104,7 @@ acs-*.bib
 *.glo
 *.gls
 *.glsdefs
+aglossary.tex
 
 # gnuplottex
 *-gnuplottex-*
