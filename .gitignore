@@ -16,6 +16,8 @@
 *.dvi
 *.xdv
 *-converted-to.*
+*.old
+
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
@@ -102,6 +104,7 @@ acs-*.bib
 *.glo
 *.gls
 *.glsdefs
+aglossary.tex
 
 # gnuplottex
 *-gnuplottex-*

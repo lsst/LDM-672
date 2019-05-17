@@ -4,7 +4,7 @@ tex=$(filter-out $(wildcard *aglossary.tex) , $(wildcard *.tex))
 DOC= LDM-672
 SRC= $(DOC).tex
 
-
+export TEXMFHOME = lsst-texmf/texmf
 
 OBJ=$(SRC:.tex=.pdf)
 
@@ -12,16 +12,18 @@ OBJ=$(SRC:.tex=.pdf)
 all: $(OBJ)
 
 $(OBJ): $(tex) aglossary.tex
-	latexmk -bibtex -xelatex -f $(SRC)
-	makeglossaries $(DOC)        
-	xelatex $(SRC)
+	xelatex $(DOC)
+	makeglossaries $(DOC)
+	bibtex $(DOC)
+	xelatex $(DOC)
+	makeglossaries $(DOC)
+	bibtex $(DOC)
+	xelatex $(DOC)
+	xelatex $(DOC)
 
-	
-
-#The generateAcronyms.py  script is in lsst-texmf/bin - put that in the path
 aglossary.tex :$(tex) myacronyms.txt
-	generateAcronyms.py -g   $(tex)
-	generateAcronyms.py -g -u   $(tex) aglossary.tex
+	$(TEXMFHOME)/../bin/generateAcronyms.py -g   $(tex)
+	$(TEXMFHOME)/../bin/generateAcronyms.py -g -u   $(tex) aglossary.tex
 
 clean :
 	latexmk -c
