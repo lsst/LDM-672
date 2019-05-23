@@ -10,7 +10,9 @@ The policy defined here will still be applicable, since many of the stakeholders
 
 \subsection{Rease General Requirements} \label{sec:genreq}
 
-All software releases shall be properly documented with a software release note as per definition in \ref{sec:defs} and tested before making them available for operations.
+In order to properly set-up the release process, all \gls{SW} products involved need to be well identified, as per definition in \citeds{DMTN-106} subsection 2.2 (see \ref{sec:defs}).
+
+All software releases shall be properly documented with a software release note as per definition in \citeds{DMTN-106} subsection 2.4 (see \ref{sec:defs}), and tested before making them available for operations.
 
 
 \subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
@@ -37,9 +39,6 @@ In order to work effectively with the \gls{DM} software while it is still under 
 
 \subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
 
-%The Science Operations Department will be in charge of  data processing in operations. 
-%Software for the various pipelines will be hosted at \gls{NCSA},IN2P3 and in Chile.
-
 The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations. 
 The \gls{LDF} requires officially released software to be used in production for the various operational activities.
 Software releases will be run in production at National \gls{Center} for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
@@ -51,8 +50,6 @@ Release frequencies will depend on the processing type:
 \item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
 \item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a \gls{patch} will be needed immediately.
 \end{itemize}
-
-\textit{In order to properly set-up the release process, the \gls{SW} products to operate need to be well identified}
 
 Patch releases need to be provided with a frequency that depends on the type of processing
 and on the urgency of the problems to be fixed.
@@ -68,7 +65,8 @@ In order for \gls{DM} to be able to respond correctly to the needs of other \gls
 
 A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff but are not directly used to generate \gls{LSST} science data products. An example of this is the software that implements the \gls{LSST} \gls{Science Platform} (\gls{LSP}).
 
-Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure. The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
+Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure. 
+The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
 
 Patch releases may need to be provided depending on the urgency and severity of the problems to be fixed.
 
