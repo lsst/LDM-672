@@ -34,15 +34,6 @@ In order to work effectively with the \gls{DM} software while it is still under 
 \item for API/ABI changes, a deprecation mechanism shall be in place in order to allow the user community to adapt their codes on an appropriate timescale.
 \end{itemize}
 
-%%%%%% commented since  out of scope, added forth point in the above bullet list
-%Back-porting bug fixes to the current stable version of the software will entail extra work for \gls{DM}. 
-%As not all bug fixes are needed by the science community, a process by which essential bug fixes only are back-ported to the current stable version should be adopted. 
-%New functionality often necessitates new or modified APIs or schemas. 
-%In such cases, a mechanism for deprecation should be adopted to allow the user community to adapt their codes on an appropriate timescale.  
-%
-%The \gls{DM} Science Team will liaise with the \gls{LSST} science community to understand their needs concerning \gls{DM} software product releases. 
-%Requests for new functionality or back-ported bug fixes to include in forthcoming \gls{DM} software product releases will be communicated to \gls{DM} via a \gls{RFC}, coordinated either by the DM-SST liaison to the science collaboration or a nominated person within the science collaboration who will coordinate requests and raise an \gls{RFC}. 
-
 
 \subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
 
@@ -53,9 +44,9 @@ Software releases will be run in production at National \gls{Center} for Superco
 Release frequencies will depend on the processing type:
 \begin{itemize}
 \item prompt processing requires releases to be available very quick, that could happen on a daily bases, especially in the early days (official releases)
- or a  \gls{patch} release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science \gls{Operations}).
+ or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science \gls{Operations}).
 \item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
-\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a \gls{patch} will be needed immediately.
+\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
 \end{itemize}
 
 Patch releases need to be provided with a frequency that depends on the type of processing

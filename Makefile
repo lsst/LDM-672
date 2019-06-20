@@ -33,7 +33,7 @@ $(OBJ): $(tex) meta.tex aglossary.tex
 
 aglossary.tex :$(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py -g   $(tex)
-	$(TEXMFHOME)/../bin/generateAcronyms.py -g -u   $(tex) aglossary.tex
+	$(TEXMFHOME)/../bin/generateAcronyms.py -g $(tex) aglossary.tex
 
 clean :
 	latexmk -c
@@ -49,3 +49,5 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
+myacronyms.txt:
+	touch myacronyms.txt
