@@ -1,25 +1,11 @@
-\section{Requirements} \label{sec:reqs}
+\section{Stakeholders Requirements} \label{sec:reqs}
 
-In this section we give an overview of requirements on \gls{DM} software product releases from the different stakeholders.
+This section gives an overview of requirements on \gls{DM} software product releases from the different stakeholders.
 
-It is important to identify the correct release policy during construction phase, in order to have it consolidated when operations starts.
+It is important to identify the expected release requirements and the corresponding policy during the construction phase, in order to have it consolidated when operations start.
 
-In operations, some of the \gls{LSST} subsystems may no longer exist, for example \gls{DM} will not exist per se in operations but \gls{DM} software products, will still exist under other managerial structure.
-The policy defined here will still be applicable, since many of the stakeholders will still expect software releases to be managed in the same manner as during construction.
-
-
-\subsection{Rease General Requirements} \label{sec:genreq}
-
-In order to properly set-up the release process, all \gls{SW} products involved need to be clearly and unequivocally identifiable in the software repository.
-\citeds{DMTN-106} subsection 2.2 (see \ref{sec:defs}) provides a SW product definition that can be used as a starting point to identify the DM software products.
-The DM product tree provided together with \citeds{LDM-294}, is available at the following link \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.
-
-All software releases shall be properly documented with a software release note.
-\citeds{DMTN-106} subsection 3.2 (see \ref{sec:defs}) provides a definition of software release note that can be used as is or tailed depending on the needs.
- 
-A software release should be fully tested before making it available for use.
-Test should be documented in a test reports.
-LSST System Engineering provides in Jira an integrated infrastructure that makes easy to document and execute test activities.
+In operations, some of the \gls{LSST} subsystems may no longer exist, for example, \gls{DM} will not exist per se but \gls{DM} software products will still exist under other managerial structure.
+The policy defined here will still be applicable since many of the stakeholders will still expect software releases to be managed in the same manner as during construction.
 
 
 \subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
@@ -29,9 +15,8 @@ In preparation for working with the \gls{LSST} data products and software during
 In order to work effectively with the \gls{DM} software while it is still under development, the science community require: 
 \begin{itemize}
 \item stable public APIs and schemas in order to build software for User-Generated analyses, 
-\item timely access new functionality,  
-\item patches and bug fixes back-ported to the current stable version of the software. 
-\item for API/ABI changes, a deprecation mechanism shall be in place in order to allow the user community to adapt their codes on an appropriate timescale.
+\item patches and bug fixes back-ported to the current stable version of the software,
+\item include software provided by external contributors in a software release or distribution (due to the collaborative nature of the project).
 \end{itemize}
 
 
@@ -77,5 +62,104 @@ large scale integration/validation test campaigns, etc. These activities should 
 In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
 In all cases, the software used must be clearly identified (Github revision at least), and the distribution/deployment strictly controlled.
 
+
+\newpage
+\section{Requirements Consolidation} \label{sec:reqdef}
+
+The following list of unique requirements is derived from the above section \ref{sec:reqs}.
+
+The main purpose of this section is to clearly identify and expand those requirements.
+In addition, a few general requirements are given, that are not specific to any stakeholder.
+
+A summary overview of the requirements per stakeholder is given at the end.
+
+
+\subsection{Release General Requirements} \label{sec:genreq}
+
+The following requirements are needed in order to properly implement the release process.
+
+
+\subsubsection{Software Products Identification Requirement} \label{sec:swid}
+
+All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (GitHub) and documented.
+
+\citeds{DMTN-106} subsection 2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
+The DM product tree provided together with \citeds{LDM-294}, is available at the following link \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.
+
+This requirement needs to be fulfilled in order to ensure the applicability of the release policy and process.
+If the software products are not properly identified, it will not be possible to do releases.
+
+
+\subsubsection{Software Release Documentation Requirement} \label{sec:reqdoc}
+
+All software releases shall be properly documented with a software release note.
+
+
+\subsubsection{Software Release Test Requirement} \label{sec:test}
+ 
+A software release should be fully tested before making it available for use.
+The test should be documented in a test report.
+
+
+\subsection{Releases Schedule Requirement} \label{sec:milestone}
+
+Releases on a software product shall be scheduled in advance.
+
+Two types of release schedule can be identified:
+
+\begin{itemize}
+\item Functional Based Release Schedule: a release shall provide a requested functionality.
+\item Time-Based Release Schedule: a release shall be provided on a specific date or cadence.
+\end{itemize}
+
+In both cases, releases can be tight to project milestones.
+Additional releases can be requested to the DM-CCB using the RFC mechanism.
+
+
+\subsection{Patch Release Requirement} \label{sec:backport}
+
+It shall be possible to backport a fix on a stable release and provide a patch release including only the backported fix.
+
+
+\subsection{Third Part Software Inclusion Requirement} \label{sec:thirdsw}
+
+It shall be possible to include in a software product release or distribution release, a software package provided by a third party contributor.
+
+Reasons to include third-party code in DM software or distributions are:
+\begin{enumerate}
+\item There are packages to  use in DM code\footnote{E.g. starlink\_ast}.  \label{item:depend}
+\item There are packages to use when working with the deployed software\footnote{Pandas  might be such an example}, - they are not needed it to build or run DM code but they may provide extra functionalities for interaction with the data.\label{item:want}
+\item Collaborator's packages for data processing or postprocessing\footnote{that depend on DM code or provide algorithm DM may want to use, like for example ngmix}. This is what most people on LSST are thinking about under the topic of third party software. \label{item:colab}
+\end{enumerate}
+
+
+\subsection{Stable public APIs and schemas} \label{sec:stable}
+
+Public APIs and schemas shall be stable and follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
+
+
+\subsection{Requirements Summary Overview} \label{sec:overview}
+
+The following table gives an overview of the release requirements applicable for each stakeholder.
+
+\setlength\LTleft{-0.35in}
+\setlength\LTright{-0.5in}
+\begin{longtable}{p{2.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.7cm}p{1.5cm}}\hline
+& 
+SW Ident.            & Release Doc.                  & Release Test & Funct. Based           & Time Based & Patch & 3rd Party SW  & Stable API  \\ \hline
+Science Community &
+YES                     & YES                                &                       &                                 &  YES            & YES.   & YES               &  YES.          \\ \hline
+DM Operations &
+YES                     & YES                                & YES               & YES                         &                     & YES.   & YES               &  YES(?)      \\ \hline
+Other Operations &
+YES                     & YES                                & YES               & YES                         &                     & YES.   &                       &  YES(?)      \\ \hline
+Infrastructure &
+YES                     & YES                                & YES               &                                 &  YES            & YES.   &                       &  YES           \\ \hline
+Non Operations &
+YES                     & YES(?)                            & YES(?)          & YES                         &  YES            & YES.   & YES               &  YES          \\ \hline
+\hline
+\end{longtable}
+\setlength\LTleft{0in}
+\setlength\LTright{0in}
 
 
