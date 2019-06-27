@@ -28,11 +28,11 @@ A release plan shall be provided according to \citeds{LDM-294}, that specify for
 This policy answers to \ref{sec:milestone} requirement.
 
 
-\subsection{Patch Releases and Backportingn Policy} \label{sec:patchpolicy}
+\subsection{Patch Releases and Backporting Policy} \label{sec:patchpolicy}
 
 Patch releases shall be scheduled, tested and approved by the DMCCB as much as possible.
 
-However, the DMPM can authorize urgent changes to the operational systems in case of need. 
+However, the DMPM can authorize urgent changes to the operational systems in case of need.
 This is already stated in \citeds{LDM-294} section 3.6.
 
 The backporting capability is a development aspect that needs to be addressed in the \citeds{DevGuideL}.
@@ -76,28 +76,25 @@ In shall be possible to include in a software product or distribution a software
 
 The use of all third party packages shall be approved by the DMCCB using the RFC mechanism.
 
-Following ways to include external software can be used:
+External software may be included in the following ways:
 
 \begin{itemize}
 \item include the package in the environment, if used in the DM code
     \begin{itemize}
-    \item this imply that the 3rd party package is available in conda, if not DM should provide a recipe for that.
-    \item technicalities to be addressed in the environment management procedures
+    \item this implies that the 3rd party package is available in conda, if not DM should provide a conda recipe.
     \item the software is provided \textit{as is} and DM is not responsible for it
     \end{itemize}
-\item include the package in a distribution, as an additional EUPS package 
+\item include the package in a distribution, as an additional  package \footnote{Currently as EUPS}
     \begin{itemize}
-    \item technicalities to be addressed in the \citeds{DevGuideL}
     \item the software is provided \textit{as is} and DM is not responsible for it
     \end{itemize}
 \item include the package in a software product, in case it requires specific LSST customization
     \begin{itemize}
-    \item technicalities to be addressed in the \citeds{DevGuideL}
-    \item DM is taking responsibility for the customized package.
+    \item DM takes responsibility for the customized package.
     \end{itemize}
 \end{itemize}
 
-An internal person shall be identified as point of contact and reference for the external package.
+In all cases a DM person shall be identified as point of contact and reference for the external package.
 
 This policy answers to \ref{sec:thirdsw} requirement.
 
