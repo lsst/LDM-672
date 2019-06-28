@@ -7,19 +7,19 @@ The following policy is provided taking into account the requirements described 
 
 The DM release versioning shall follow Semantic Versioning\footnote{\url{https://semver.org/}} as described in \citeds{DMTN-106}, section 3.3.
 
-This policy answers to \ref{sec:stable} requirement.
-However, API stability is a development aspect that needs to be addressed tin the \citeds{DevGuideL}.
+This policy partially answers to \ref{sec:stable} requirement.
+In general, API stability is a development aspect that needs to be addressed in the \citeds{DevGuideL}.
 
 
 \subsection{Release Schedule Policy} \label{sec:schedulepolicy}
 
 Major and minor releases should be scheduled accordingly to the requirements of each stakeholder.
 
-A release plan shall be provided according to \citeds{LDM-294}, that specify for each software product:
+A release plan including for each release following information:
 
 \begin{itemize}
 \item when a release is expected
-\item specify the milestone or RFC relevant that requested the release
+\item specify the corresponding milestone or RFC
 \item if it is a time-based release: specify the timing when the release shall be done (for example, every 6 months)
 \item if it is a functionality based release: specify which functionalities shall be included in the release
 \item specify the list of know stakeholders
@@ -33,7 +33,6 @@ This policy answers to \ref{sec:milestone} requirement.
 Patch releases shall be scheduled, tested and approved by the DMCCB as much as possible.
 
 However, the DMPM can authorize urgent changes to the operational systems in case of need.
-This is already stated in \citeds{LDM-294} section 3.6.
 
 The backporting capability is a development aspect that needs to be addressed in the \citeds{DevGuideL}.
 
@@ -63,18 +62,18 @@ In some cases unit tests may be considered sufficient or, it may not be possible
 
 Each release shall be documented by a Release Note.
 
-It shall always be possible to collect automatically a minimum set of information to include in the release note and therefore properly identify the release.
+It shall always be possible to collect a minimum set of information to include in the release note and therefore properly identify the release.
 
 \citeds{DMTN-106} subsection 3.2 (see \ref{sec:defs}) provides a definition of software release note that can be used as is or tailed depending on the needs.
 
 This policy answers to \ref{sec:reqdoc} requirement.
 
 
-\subsection{Third Party Software Policy} \label{sec:thirdpolicy}
+\subsection{Third-Party Software Policy} \label{sec:thirdpolicy}
 
 In shall be possible to include in a software product or distribution a software package provided by an external collaborator.
 
-The use of all third party packages shall be approved by the DMCCB using the RFC mechanism.
+The use of all third-party packages shall be approved by the DMCCB using the RFC mechanism.
 
 External software may be included in the following ways:
 
@@ -99,15 +98,30 @@ In all cases a DM person shall be identified as point of contact and reference f
 This policy answers to \ref{sec:thirdsw} requirement.
 
 
+\subsection{Software License Policy} \label{sec:licensepolicy}
+
+DM shall adopt an appropriate software license in order to fulfill the requirement expressed in section \ref{sec:license}.
+Once the license has been identified, this policy can be completed.
+\footnote{See discussion in \jira{DM-5031}}
+
+
 \newpage
-\section{Non Compliance} \label{sec:noncompliance}
+\section{Policies Applicability} \label{sec:applicability}
 
 The policies described in the previous section \ref{sec:policy} are mandatory, except where specified as non-mandatory.
 
-Each software product responsible (T/CAM) shall specify which policy is not applicable for the specific software product and why.
+The \gls{DM} software products, on which these policies are applicable, are defined in the LDM-294.
+The approved product tree is available online at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}
 
-Also, each stakeholder shall ensure that the level of compliance provided by the required software product is acceptable for them.
+These policies may also be applicable to software products development by other \gls{LSST} subsystems.
 
-The DM-CCB shall ensure that compliance information is available and agreed between T/CAMs and stakeholders.
+
+\subsection{Non Compliance} \label{sec:noncompliance}
+
+Each T/CAM can specify which policy is not applicable for the specific software product and why.
+
+Also, each stakeholder shall ensure that the level of compliance provided by the required software products is acceptable for them.
+
+The DM-CCB shall ensure that the available compliance information is agreed between T/CAMs and stakeholders.
 
 It has to be taken in account that, each time a policy is not considered applicable to a software product, this will reduce the effectiveness of the process and increase the risks of problems to be experienced by the stakeholders.
