@@ -22,21 +22,18 @@ A release plan including for each release following information:
 \item specify the corresponding milestone or RFC
 \item if it is a time-based release: specify the timing when the release shall be done (for example, every 6 months)
 \item if it is a functionality based release: specify which functionalities shall be included in the release
-\item specify the list of know stakeholders
+\item specify the list of known stakeholders
 \end{itemize}
 
-This policy answers to \ref{sec:milestone} requirement.
+This policy answers requirement \ref{sec:milestone} .
 
 
 \subsection{Patch Releases and Backporting Policy} \label{sec:patchpolicy}
 
 Patch releases shall be scheduled, tested and approved by the DMCCB as much as possible.
-
 However, the DMPM can authorize urgent changes to the operational systems in case of need.
-
 The backporting capability is a development aspect that needs to be addressed in the \citeds{DevGuideL}.
-
-This policy answers to \ref{sec:backport} requirement.
+This policy answers requirement  \ref{sec:backport} .
 
 
 \subsection{Release Testing Policy} \label{sec:testpolicy}
@@ -50,9 +47,9 @@ The scope of the test is to ensure that:
 \item there is no regression (reintroduction of previously fixed issues)
 \end{itemize}
 
-LSST System Engineering provides in Jira an integrated infrastructure (ATM) that makes easy to document and execute test activities.
+LSST System Engineering provides in Jira an integrated infrastructure (ATM) that makes it easy to document and execute test activities.
 
-This policy answers to \ref{sec:test} requirement.
+This policy answers requirement \ref{sec:test} .
 
 This policy is not mandatory.
 In some cases unit tests may be considered sufficient or, it may not be possible to fully test a software release in isolation.
@@ -60,21 +57,18 @@ In some cases unit tests may be considered sufficient or, it may not be possible
 
 \subsection{Release Note Policy} \label{sec:notepolicy}
 
-Each release shall be documented by a Release Note.
-
+Each release shall be documented by a Release Note.\\
 It shall always be possible to collect a minimum set of information to include in the release note and therefore properly identify the release.
 
 \citeds{DMTN-106} subsection 3.2 (see \ref{sec:defs}) provides a definition of software release note that can be used as is or tailed depending on the needs.
 
-This policy answers to \ref{sec:reqdoc} requirement.
+This policy answers requirement \ref{sec:reqdoc}.
 
 
 \subsection{Third-Party Software Policy} \label{sec:thirdpolicy}
 
 In shall be possible to include in a software product or distribution a software package provided by an external collaborator.
-
 The use of all third-party packages shall be approved by the DMCCB using the RFC mechanism.
-
 External software may be included in the following ways:
 
 \begin{itemize}
@@ -95,7 +89,7 @@ External software may be included in the following ways:
 
 In all cases a DM person shall be identified as point of contact and reference for the external package.
 
-This policy answers to \ref{sec:thirdsw} requirement.
+This policy answers to requirement \ref{sec:thirdsw}.
 
 
 \subsection{Software License Policy} \label{sec:licensepolicy}
@@ -106,22 +100,21 @@ Once the license has been identified, this policy can be completed.
 
 
 \newpage
-\section{Policies Applicability} \label{sec:applicability}
+\section{Applicability of policies } \label{sec:applicability}
 
 The policies described in the previous section \ref{sec:policy} are mandatory, except where specified as non-mandatory.
 
 The \gls{DM} software products, on which these policies are applicable, are defined in the LDM-294.
 The approved product tree is available online at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}
 
-These policies may also be applicable to software products development by other \gls{LSST} subsystems.
 
 
 \subsection{Non Compliance} \label{sec:noncompliance}
 
-Each T/CAM can specify which policy is not applicable for the specific software product and why.
+Each T/CAM may  specify which policy is not applicable for the specific software product and why.
 
-Also, each stakeholder shall ensure that the level of compliance provided by the required software products is acceptable for them.
+Each stakeholder shall ensure that the level of compliance provided by the required software products is acceptable for them.
 
 The DM-CCB shall ensure that the available compliance information is agreed between T/CAMs and stakeholders.
 
-It has to be taken in account that, each time a policy is not considered applicable to a software product, this will reduce the effectiveness of the process and increase the risks of problems to be experienced by the stakeholders.
+Each time a policy is not considered applicable to a software product the effectiveness of the process is reduced and the risks of problems increase.

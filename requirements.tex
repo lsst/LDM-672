@@ -1,16 +1,16 @@
 \section{Stakeholders Requirements} \label{sec:reqs}
 
-This section try to address the question: 
+This section address the questions:
 
-\textbf{Why DM software releases are needed?}
+\textbf{Why are DM software releases needed? Who is requesting them ?}
 
-and therefore, tries to identify who is requesting them: the stakeholders.
+The classic answer to the second questions is that  stakeholders request releases for various reasons.
 
-The following subsections summarize the release requirements on \gls{DM} software products from the different stakeholders' point of view.
+The following subsections summarize the release requirements on \gls{DM} software products from the different stakeholders' points of view.
 
 It is important to identify these requirements and the corresponding policies during the construction phase, in order to have them consolidated when operations start.
 
-In operations, some of the \gls{LSST} subsystems may no longer exist, for example, \gls{DM} will not exist per se but \gls{DM} software products will still exist under other managerial structure.
+In operations, some of the \gls{LSST} subsystems may no longer exist, for example, \gls{DM} will not exist per se but \gls{DM} software products will still exist under another managerial structure.
 The requirements and policies defined here will still be applicable since many of the stakeholders will still expect software releases to be managed following the process consolidated during construction.
 
 
@@ -23,20 +23,20 @@ In order to do that, software releases shall:
 \begin{itemize}
 \item be available on a time base cadence (every 6 months) during the construction phase,
 \item be available when required by a project milestone, in order to be used for the proper validation (commissioning) and operations activities,
-\item implement the corresponding functionalities,
+\item implement the  functionality needed for the milestone or phase of the project,
 \item include third-party software from the Science Community when this is beneficial to the project outcome,
-\item source code license shall be appropriate in order to permit contribution from the Science Community.
+\item carry an appropriate source code license to permit contributions from the Science Community.
 \end{itemize}
 
 
 \subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
 
-In preparation for working with the \gls{LSST} data products and software during operations, several \gls{LSST} science collaborations have begun using the \gls{DM} software to run data challenges using precursor data or simulations, and to do performance studies. These activities effectively increase the number of beta-testers of \gls{DM} software products, providing valuable feedback to \gls{DM} on the state of the system. 
+In preparation for working with the \gls{LSST} data products and software during operations, several \gls{LSST} science collaborations have begun using the \gls{DM} software to run data challenges using precursor data or simulations, and to do performance studies. These activities effectively increase the number of beta-testers of \gls{DM} software products, providing valuable feedback to \gls{DM} on the state of the system.
 
-In order to work effectively with the \gls{DM} software while it is still under development, the science community require: 
+In order to work effectively with the \gls{DM} software while it is still under development, the science community require:
 \begin{itemize}
 \item timely access new functionality
-\item stable public APIs and schemas in order to build software for User-Generated analyses, 
+\item stable public APIs and schemas in order to build software for User-Generated analyses,
 \item patches and bug fixes back-ported to the current stable version of the software,
 \item include software provided by external contributors in a software release or distribution (due to the collaborative nature of the project).
 \end{itemize}
@@ -44,7 +44,7 @@ In order to work effectively with the \gls{DM} software while it is still under 
 
 \subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
 
-The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations. 
+The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations.
 The \gls{LDF} requires officially released software to be used in production for the various operational activities.
 Software releases will be run in production at National \gls{Center} for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
 
@@ -62,7 +62,7 @@ and on the urgency of the problems to be fixed.
 
 \subsection{Release Requirements for \gls{LSST} Subsystems in \gls{Operations}.} \label{sec:otherreqs}
 
-Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products. 
+Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products.
 In order for \gls{DM} to be able to respond correctly to the needs of other \gls{LSST} subsystems, it is important to first identify which \gls{DM} software products are used, and how they are used.
 
 
@@ -70,7 +70,7 @@ In order for \gls{DM} to be able to respond correctly to the needs of other \gls
 
 A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff but are not directly used to generate \gls{LSST} science data products. An example of this is the software that implements the \gls{LSST} \gls{Science Platform} (\gls{LSP}).
 
-Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure. 
+Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure.
 The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
 
 Patch releases may need to be provided depending on the urgency and severity of the problems to be fixed.
@@ -78,7 +78,7 @@ Patch releases may need to be provided depending on the urgency and severity of 
 
 \subsection{Release Requirements for non-Operational Project Activities} \label{sec:nonopsreqs}
 
-This includes activities done in preparation for operations, such as commissioning, 
+This includes activities done in preparation for operations, such as commissioning,
 large scale integration/validation test campaigns, etc. These activities should use use,  as much as possible,  officially released software.
 
 In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
@@ -118,7 +118,7 @@ All software releases shall be properly documented with a software release note.
 
 
 \subsubsection{Software Release Test Requirement} \label{sec:test}
- 
+
 A software release should be fully tested before making it available for use.
 The test should be documented in a test report.
 
@@ -165,7 +165,7 @@ The following table gives an overview of the release requirements applicable for
 \setlength\LTleft{-0.4in}
 \setlength\LTright{-0.5in}
 \begin{longtable}{p{2.4cm}p{1.2cm}p{1.4cm}p{1.4cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.7cm}p{1.3cm}p{1.3cm}}\hline
-& 
+&
 SW Ident.            & Release Doc.                  & Release Test & Funct. Based           & Time Based & Patch & 3rd Party SW  & Stable API  & Policy \\ \hline
 LSST Project &
 YES                     & YES                                & YES               &  YES                        &  YES            & YES.   & YES               &  YES.          & YES   \\ \hline

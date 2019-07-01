@@ -4,7 +4,7 @@ tex=$(filter-out $(wildcard *aglossary.tex) , $(wildcard *.tex))
 DOC= LDM-672
 SRC= $(DOC).tex
 
-export TEXMFHOME = lsst-texmf/texmf
+TEXMFHOME ?= lsst-texmf/texmf
 
 # Version information extracted from git.
 GITVERSION := $(shell git log -1 --date=short --pretty=%h)
