@@ -14,7 +14,7 @@ In operations, some of the \gls{LSST} subsystems may no longer exist, for exampl
 The requirements and policies defined here will still be applicable since many of the stakeholders will still expect software releases to be managed following the process consolidated during construction.
 
 
-\subsection{Release Requirements for the \gls{LSST} Project} \label{sec:comreqs}
+\subsection{Release Requirements for the \gls{LSST} Project} \label{sec:lsstreqs}
 
 The main reason for DM to do software releases is to fulfill the project outcome: provide the Data Products.
 
@@ -88,17 +88,16 @@ In all cases, the software used must be clearly identified (Github revision at l
 \newpage
 \section{Requirements Consolidation} \label{sec:reqdef}
 
-The following list of unique requirements is derived from the above section \ref{sec:reqs}.
+The main purpose of this section is to identify all possible release requirements.
+In the first subsection, a few general requirements are given.
+The second subsection summarizes the requirements given by the stakeholders.
 
-The main purpose of this section is to clearly identify and expand those requirements.
-In addition, a few general requirements are given, that are not specific to any stakeholder.
-
-A summary overview of the requirements per stakeholder is given at the end.
+A summary overview of the requirements per stakeholder is given at the end of the section.
 
 
-\subsection{Release General Requirements} \label{sec:genreq}
+\subsection{General Requirements} \label{sec:genreq}
 
-The following requirements are needed in order to properly implement the release process.
+The following general requirements are needed in order to properly implement the release process.
 
 
 \subsubsection{Software Products Identification Requirement} \label{sec:swid}
@@ -123,7 +122,12 @@ A software release should be fully tested before making it available for use.
 The test should be documented in a test report.
 
 
-\subsection{Releases Schedule Requirement} \label{sec:milestone}
+\subsection{Stakeholders Requirements} \label{sec:stakeholdersreqs}
+
+The following list of requirements is derived from the above section \ref{sec:reqs}.
+
+
+\subsubsection{Releases Schedule Requirement} \label{sec:milestone}
 
 Releases on a software product shall be scheduled in advance.
 
@@ -138,22 +142,22 @@ In both cases, releases can be tight to project milestones.
 Additional releases can be requested to the DM-CCB using the RFC mechanism.
 
 
-\subsection{Patch Release Requirement} \label{sec:backport}
+\subsubsection{Patch Release Requirement} \label{sec:backport}
 
 It shall be possible to backport a fix on a stable release and provide a patch release including only the backported fix.
 
 
-\subsection{Third-Party Software Inclusion Requirement} \label{sec:thirdsw}
+\subsubsection{Third-Party Software Inclusion Requirement} \label{sec:thirdsw}
 
 It shall be possible to include in a software product release or distribution release, a software package provided by a third-party contributor.
 
 
-\subsection{Stable public APIs and Schemas Requirement} \label{sec:stable}
+\subsubsection{Stable public APIs and Schemas Requirement} \label{sec:stable}
 
 Public APIs and schemas shall be stable and follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
 
 
-\subsection{License Requirement} \label{sec:license}
+\subsubsection{License Requirement} \label{sec:license}
 
 DM software shall be released with an appropriate license, that permits to use and redistribution of software provided by external collaborators.
 
@@ -166,19 +170,19 @@ The following table gives an overview of the release requirements applicable for
 \setlength\LTright{-0.5in}
 \begin{longtable}{p{2.4cm}p{1.2cm}p{1.4cm}p{1.4cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.7cm}p{1.3cm}p{1.3cm}}\hline
 &
-SW Ident.            & Release Doc.                  & Release Test & Funct. Based           & Time Based & Patch & 3rd Party SW  & Stable API  & Policy \\ \hline
-LSST Project &
-YES                     & YES                                & YES               &  YES                        &  YES            & YES.   & YES               &  YES.          & YES   \\ \hline
-Science Community &
-YES                     & YES                                &                       &                                 &  YES            & YES.   & YES               &  YES.          & YES   \\ \hline
-DM Operations &
-YES                     & YES                                & YES               & YES                         &                     & YES.   & YES               &  YES(?)      &            \\ \hline
-Other Operations &
-YES                     & YES                                & YES               & YES                         &                     & YES.   &                       &  YES(?)      &            \\ \hline
-Infrastructure &
-YES                     & YES                                & YES               &                                 &  YES            & YES.   &                       &  YES           &            \\ \hline
-Non Operations &
-YES                     & YES(?)                            & YES(?)          & YES                         &  YES            & YES.   & YES               &  YES          &            \\ \hline
+\textbf{SW Ident.}&\textbf{Release Doc.}&\textbf{Release Test}&\textbf{Funct. Based}&\textbf{Time Based}&\textbf{Patch}&\textbf{3rd Party SW}&\textbf{Stable API} &\textbf{Policy}\\ \hline
+\textbf{LSST Project} \ref{sec:lsstreqs}&
+YES                     & YES                         & YES                         &  YES                         &  YES                      & YES             & YES                          &  YES.                   & YES   \\ \hline
+\textbf{Science Community} \ref{sec:comreqs}&
+YES                     & YES                         &                                 &                                   &  YES                     & YES.            & YES                          &  YES.                   & YES   \\ \hline
+\textbf{DM Operations} \ref{sec:procreqs}&
+YES                     & YES                         & YES                         & YES                           &                              & YES             & YES                          &  YES(?)                &            \\ \hline
+\textbf{Other Operations} \ref{sec:otherreqs}&
+YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &  YES(?)                &            \\ \hline
+\textbf{Infrastructure} \ref{sec:infreqs}&
+YES                     & YES                         & YES                         &                                   &  YES                     & YES             &                                  &  YES                    &            \\ \hline
+\textbf{Non Operations} \ref{sec:nonopsreqs}&
+YES                     & YES(?)                     & YES(?)                    & YES                           &  YES                     & YES             & YES                          &  YES                    &            \\ \hline
 \hline
 \end{longtable}
 \setlength\LTleft{0in}
