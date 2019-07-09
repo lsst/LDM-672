@@ -1,10 +1,10 @@
 #for dependency you want all tex files  but for acronyms you do not want to include the acronyms file itself.
-tex=$(filter-out $(wildcard *aglossary.tex) , $(wildcard *.tex))  
+tex=$(filter-out $(wildcard *aglossary.tex) , $(wildcard *.tex))
 
 DOC= LDM-672
 SRC= $(DOC).tex
 
-TEXMFHOME ?= lsst-texmf/texmf
+export TEXMFHOME ?= lsst-texmf/texmf
 
 # Version information extracted from git.
 GITVERSION := $(shell git log -1 --date=short --pretty=%h)
