@@ -121,11 +121,10 @@ The following general requirements are needed in order to properly implement the
 
 \subsubsection{Software Products Identification Requirement} \label{sec:swid}
 
-All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (GitHub) and documented.
-
-\citeds{DMTN-106} subsection 2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
-The DM product tree provided together with \citeds{LDM-294}, is available at the following link \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.
-
+All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (currently, GitHub) and documented\footnote{
+% Moved to a footnote because this is not a requirement
+\citeds{DMTN-106} \S2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
+The DM Product Tree is provided with \citeds{LDM-294} and may be accessed directly at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.}.
 This requirement needs to be fulfilled in order to ensure the applicability of the release policy and process.
 If the software products are not properly identified, it will not be possible to do releases.
 
@@ -153,32 +152,33 @@ Releases on a software product shall be scheduled in advance.
 Two types of release schedule can be identified:
 
 \begin{itemize}
-\item Functional Based Release Schedule: a release shall provide a requested functionality.
+\item Functional Based Release Schedule: a release shall provide specific functionality.
 \item Time-Based Release Schedule: a release shall be provided on a specific date or cadence.
 \end{itemize}
 
-In both cases, releases can be tight to project milestones.
-Additional releases can be requested to the DM-CCB using the RFC mechanism.
+In both cases, releases may be associated with project milestones.
+Additional releases may be made available upon request to the DM-CCB using the “RFC” mechanism as described in \S\ref{sec:process}.
 
 
 \subsubsection{Patch Release Requirement} \label{sec:backport}
 
-It shall be possible to backport a fix on a stable release and provide a patch release including only the backported fix.
+It shall be possible to back-port a fix on a stable release and provide a patch release including only the backported fix.
 
 
 \subsubsection{Third-Party Software Inclusion Requirement} \label{sec:thirdsw}
 
-It shall be possible to include in a software product release or distribution release, a software package provided by a third-party contributor.
+It shall be possible to include a software package provided by a third-party contributor in a software product release or distribtuion.
 
 
 \subsubsection{Stable public APIs and Schemas Requirement} \label{sec:stable}
 
-Public APIs and schemas shall be stable and follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
+% Removed “shall be stable” from this, because that's not well defined: they must follow the deprecation policy, and that policy should be chosen to achieve whatever level of stability is expedient.
+Public APIs and schemas shall follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
 
 
 \subsubsection{License Requirement} \label{sec:license}
 
-DM software shall be released with an appropriate license, that permits to use and redistribution of software provided by external collaborators.
+DM software shall be released with an appropriate license that permits distribution to, use by, and contributions from, external collaborators.
 
 
 \subsection{Requirements Summary Overview} \label{sec:overview}
