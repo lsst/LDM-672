@@ -18,14 +18,26 @@ The requirements and policies defined here will still be applicable since many o
 
 The main reason for DM to do software releases is to fulfill the project outcome: provide the Data Products.
 
-In order to do that, software releases shall:
+The LSST Data Products will be obtained processing the data collected by the telescope using Data Management software products.
+
+The processing shall be done in a controlled way using officially released software.
+In order to do that, the software products releases shall:
 
 \begin{itemize}
-\item be available on a time base cadence (every 6 months) during the construction phase,
-\item be available when required by a project milestone, in order to be used for the proper validation (commissioning) and operations activities,
-\item implement the  functionality needed for the milestone or phase of the project,
-\item include third-party software from the Science Community when this is beneficial to the project outcome,
-\item carry an appropriate source code license to permit contributions from the Science Community.
+\item fulfill the data processing as per project milestones. This imply:
+  \begin{itemize}
+  \item fulfill the LSST construction requirements as per section \S\ref{sec:nonopsreqs}
+  \item fulfill the operational requirements as per sections \S\ref{sec:procreqs} and \S\ref{sec:otherreqs}
+  \item establish a well controlled release process
+  \item releases to be available as per project milestones.
+  \item releases to include the expected functionalities in order to fulfill the project milestones.
+  \end{itemize}
+\item enable the Science Community to contribute to the project. This imply:
+  \begin{itemize}
+  \item include third-party software from the Science Community when this is beneficial to the project outcome,
+  \item carry an appropriate source code license to permit contributions from the Science Community.
+  \item fulfill the Science Community requirements as per section \S\ref{sec:comreqs}
+  \end{itemize}
 \end{itemize}
 
 
@@ -38,15 +50,16 @@ In order to work effectively with the \gls{DM} software while it is still under 
 \item timely access new functionality
 \item stable public APIs and schemas in order to build software for User-Generated analyses,
 \item patches and bug fixes back-ported to the current stable version of the software,
-\item include software provided by external contributors in a software release or distribution (due to the collaborative nature of the project).
 \end{itemize}
 
 
-\subsection{Release Requirements for Data Processing in Operations} \label{sec:procreqs}
+\subsection{Release Requirements for Operational Data Processing Centers} \label{sec:procreqs}
 
 The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations.
 The \gls{LDF} requires officially released software to be used in production for the various operational activities.
 Software releases will be run in production at National \gls{Center} for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
+
+Software releases are required to be fully tested and well documented.
 
 Release frequencies will depend on the processing type:
 \begin{itemize}
@@ -76,13 +89,16 @@ The releases may be tied to processing milestones if the services or features th
 Patch releases may need to be provided depending on the urgency and severity of the problems to be fixed.
 
 
-\subsection{Release Requirements for non-Operational Project Activities} \label{sec:nonopsreqs}
+\subsection{Release Requirements for LSST Construction Activities} \label{sec:nonopsreqs}
 
 This includes activities done in preparation for operations, such as commissioning,
 large scale integration/validation test campaigns, etc. These activities should use use,  as much as possible,  officially released software.
 
 In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
 In all cases, the software used must be clearly identified (Github revision at least), and the distribution/deployment strictly controlled.
+
+During construction software releases are related to construction milestones.
+In most of the cases, these implies releases to be done on a regular time schedule, for example, every 6 months.
 
 
 \newpage
@@ -172,17 +188,17 @@ The following table gives an overview of the release requirements applicable for
 &
 \textbf{SW Ident.}&\textbf{Release Doc.}&\textbf{Release Test}&\textbf{Funct. Based}&\textbf{Time Based}&\textbf{Patch}&\textbf{3rd Party SW}&\textbf{Stable API} &\textbf{License}\\ \hline
 \textbf{LSST Project} \ref{sec:lsstreqs}&
-YES                     & YES                         & YES                         &  YES                         &  YES                      & YES             & YES                          &  YES.                   & YES   \\ \hline
+YES                     & YES                         & YES                         &  YES                         &  YES                      &                     & YES                          &                            & YES   \\ \hline
 \textbf{Science Community} \ref{sec:comreqs}&
-YES                     & YES                         &                                 &                                   &  YES                     & YES.            & YES                          &  YES.                   & YES   \\ \hline
-\textbf{DM Operations} \ref{sec:procreqs}&
-YES                     & YES                         & YES                         & YES                           &                              & YES             & YES                          &  YES(?)                &            \\ \hline
+YES                     & YES                         &                                 &                                   &  YES                     & YES             &                                 &  YES                    &            \\ \hline
+\textbf{Proc. Centers} \ref{sec:procreqs}&
+YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &                             &            \\ \hline
 \textbf{Other Operations} \ref{sec:otherreqs}&
-YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &  YES(?)                &            \\ \hline
+YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &                             &            \\ \hline
 \textbf{Infrastructure} \ref{sec:infreqs}&
 YES                     & YES                         & YES                         &                                   &  YES                     & YES             &                                  &  YES                    &            \\ \hline
-\textbf{Non Operations} \ref{sec:nonopsreqs}&
-YES                     & YES(?)                     & YES(?)                    & YES                           &  YES                     & YES             & YES                          &  YES                    &            \\ \hline
+\textbf{Construction} \ref{sec:nonopsreqs}&
+YES                     & YES.                        & YES.                       & YES                           &  YES                     & YES             &                                  &  YES                    &            \\ \hline
 \hline
 \end{longtable}
 \setlength\LTleft{0in}
