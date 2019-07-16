@@ -14,8 +14,11 @@ This document describes the processes that LSST Data Management will adopt for m
 
 ****
 
-To compile this document you need to have set up lsst-texmf, see http://lsst-texmf.lsst.io.
-The bin directory of texmf must be in your path for generateAcronyms.py to be found and work. 
+To compile this document you need to initialize the lsst-texmf submodule as follows:
+
+  git submodule init
+  git submodule update
+
 
 **Links**
 

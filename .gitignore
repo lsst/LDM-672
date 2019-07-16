@@ -16,6 +16,8 @@
 *.dvi
 *.xdv
 *-converted-to.*
+*.old
+
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
@@ -23,6 +25,7 @@
 
 ## Generated if empty string is given at "Please type another file name for output:"
 LDM-672.pdf
+meta.tex
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -102,6 +105,7 @@ acs-*.bib
 *.glo
 *.gls
 *.glsdefs
+aglossary.tex
 
 # gnuplottex
 *-gnuplottex-*

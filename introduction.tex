@@ -1,15 +1,36 @@
 \section{Introduction} \label{sec:intro}
 
-The current situation is  that, only the Science Pipelines is released as follows:
+This document presents the release management approach for \gls{LSST} \gls{DM} software products.
+
+First of all, in section \ref{sec:reqs}, the release requirements for the various  stakeholders are identified.
+The release requirements are then consolidated in section \ref{sec:reqdef}.
+These requirements are not formal project requirements, as given for example in the \gls{DMS} requirements specification \citeds{LSE-61}, but are nevertheless important to ensure the project's goals.
+
+Based on the consolidated requirements, a set of policies are derived in section \ref{sec:policy} and guidelines on their applicability is provided in section \ref{sec:noncompliance}.
+
+Finally section \ref{sec:process} gives a high level overview of the release process.
+
+
+\subsection{Releases Status}\label{sec:sci}
+
+Currently, only the \gls{Science Pipelines} product is released.
+Builds and releases are made on the following time-based cadence:
 
 \begin{itemize}
-\item Stable releases every 6 months
-\item Weekly builds
 \item Nightly builds
+\item Weekly builds
+\item Official releases every 6 months
 \end{itemize}
 
-The current release process requires few weeks to make an official release available.
+The time needed to consolidate an official release from a weekly build is considerable.
+Usually 2 or 3 weeks are sufficient but in some cases it may take more than a month.
+Consequently, by the time a release becomes available to the users, it is already old.
+For this reason, users generally prefer to work with weekly builds that are sufficiently stable and include all new functionalities completed in the last week.
 
-For this reasons weekly builds are largely used, since they provide the most up to date and stable software.
+The \gls{Science Pipelines} release checklist is documented in \citeds{SQR-016}.
+The technical note \citeds{DMTN-106} generalizes the process and summarizes the technical problems that need to be solved to make the  procedure applicable to other software products.
 
 
+\subsection{Definitions} \label{sec:defs}
+
+The relevant definition to be considered when working on release policy and process are given in \citeds{DMTN-106}, section 2.

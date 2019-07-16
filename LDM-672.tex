@@ -1,36 +1,36 @@
 \documentclass[DM,lsstdraft,toc]{lsstdoc}
+\usepackage{bbding}
 
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
 
 % Package imports go here.
 
-\input{aglossary.tex}
+\input meta.tex
+
 \makeglossaries
+\input{aglossary.tex}
 
 % Local commands go here.
 
 % To add a short-form title:
 % \title[Short title]{Title}
-\title{LSST Software Release Management Policy}
-
-% Optional subtitle
-% \setDocSubtitle{A subtitle}
+\title{LSST Software Release Management}
 
 \author{%
-Leanne Guy, Gabriele Comoretto
-}	
+G. Comoretto, L.~P.~Guy, W. O'Mullane, K.-T. Lim, M. Butler, M. Gelman, J.D.~Swinbank
+}
 
 \setDocRef{LDM-672}
 
 \date{\today}
 
 % Optional: name of the document's curator
-\setDocCurator{Leanne Guy}
+\setDocCurator{Gabriele Comoretto}
+\setDocUpstreamLocation{\url{https://github.com/lsst/ldm-672}}
+\setDocUpstreamVersion{\vcsrevision}
 
 \setDocAbstract{%
-This document outlines the \gls{LSST} \gls{DM} policy for managing \gls{DM} software product releases. 
-The policy takes into account requirements from users of \gls{DM} software products, both from within the \gls{LSST} project, and from the LSST science community. 
-Technical implementation details for release management are covered in \citeds{DMTN-106}. 
+This document outlines the policies and high level management approach for \gls{LSST} \gls{DM} software product releases.
 }
 
 
@@ -39,8 +39,10 @@ Technical implementation details for release management are covered in \citeds{D
 % Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
 % See LPM-51 for version number policy.`
 \setDocChangeRecord{%
+  \addtohist{}{2019-06-24}{Added Policy}{G.~Comoretto,J.~Swinbank}
+  \addtohist{}{2019-05-09}{Added contribution from stakeholders}{G.~Comoretto on behalf of K-T Lim, M. Butler, M. Johnson}
   \addtohist{}{2019-05-07}{Updated community requirements, abstractt}{L.~Guy}
-  \addtohist{}{2019-04-22}{Definitions and Requirements}{G.~ Comoretto}
+  \addtohist{}{2019-04-22}{Definitions and Requirements}{G.~Comoretto}
   \addtohist{}{2018-12-03}{First draft}{L.~Guy, G.~Comoretto}
 }
 
@@ -57,14 +59,14 @@ Technical implementation details for release management are covered in \citeds{D
 \input{requirements}
 
 \newpage
+\input{policy}
+
+\newpage
 \input{process}
 
+\newpage
 \appendix
 
-%definitions. This could be moved in the main part pf the document
-\include{definitions}
-
-\include{swptree}
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
 \section{References} \label{sec:bib}
