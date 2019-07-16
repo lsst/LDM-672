@@ -2,7 +2,7 @@
 
 This section address the questions:
 
-\textbf{Why are DM software releases needed? Who is requesting them ?}
+\textbf{Why are DM software releases needed? Who is requesting them?}
 
 The classic answer to the second questions is that  stakeholders request releases for various reasons.
 
@@ -10,78 +10,81 @@ The following subsections summarize the release requirements on \gls{DM} softwar
 
 It is important to identify these requirements and the corresponding policies during the construction phase, in order to have them consolidated when operations start.
 
-In operations, some of the \gls{LSST} subsystems may no longer exist, for example, \gls{DM} will not exist per se but \gls{DM} software products will still exist under another managerial structure.
+During operations, some of the construction-era subsystems will no longer exist.
+For example, the Data Management Subsystem will have been disbanded, but the \gls{DM} products will continue to be used and developed under the operational project structure.
 The requirements and policies defined here will still be applicable since many of the stakeholders will still expect software releases to be managed following the process consolidated during construction.
 
 
-\subsection{Release Requirements for the \gls{LSST} Project} \label{sec:lsstreqs}
+\subsection{Release Requirements to meet \gls{LSST}'s Operational Goals} \label{sec:lsstreqs}
 
-The main reason for DM to do software releases is to fulfill the project outcome: provide the Data Products.
+A primary reason to make software releases is provide a mechanism by which the versions of the software used to generate LSST's data products, and hence the provenance of those data products, may be managed and controlled.
 
-The LSST Data Products will be obtained processing the data collected by the telescope using Data Management software products.
-
-In order to controll the provenance of the LSST Data Products, the processing shall be done in a controlled way and using officially released software.
-This imply that the releases shall:
+During the operational era, the Data Management subsystem will have disbanded.
+However, it is important that best practices for release management are established now and can be supplied to the LSST Operations project.
+In particular, the process should deliver software releases which:
 
 \begin{itemize}
-\item fulfill the data processing as per project milestones. This imply:
+\item Enable data processing to be carried out according to the project requirements. This implies that the process should:
   \begin{itemize}
-  \item fulfill the LSST construction requirements as per section \S\ref{sec:nonopsreqs}
-  \item fulfill the operational requirements as per sections \S\ref{sec:procreqs} and \S\ref{sec:otherreqs}
-  \item establish a well controlled release process
-  \item releases to be available as per project milestones.
-  \item releases to include the expected functionalities in order to fulfill the project milestones.
+  \item fulfill the LSST construction requirements as defined in \S\ref{sec:nonopsreqs}
+  \item fulfill the operational requirements as defined in \S\ref{sec:procreqs} and \S\ref{sec:otherreqs}
+  \item deliver documented functionality as described by construction-era milestones and emergent operational requirements.
   \end{itemize}
-\item enable the Science Community to contribute to the project. This imply:
+\item Enable the scientific community to contribute to the project. This imples that the process should:
   \begin{itemize}
-  \item include third-party software from the Science Community when this is beneficial to the project outcome,
-  \item carry an appropriate source code license to permit contributions from the Science Community.
-  \item fulfill the Science Community requirements as per section \S\ref{sec:comreqs}
+  \item fulfill the requirements from the scientific community as defined in \S\ref{sec:comreqs}
+  \item include third-party software provided by the scientific community when this is beneficial to the project outcome
+  \item carry an appropriate source code license.
   \end{itemize}
 \end{itemize}
 
 
-\subsection{Release Requirements for the \gls{LSST} Science Community} \label{sec:comreqs}
+\subsection{Release Requirements for Interacting with the Scientific Community} \label{sec:comreqs}
 
-In preparation for working with the \gls{LSST} data products and software during operations, several \gls{LSST} science collaborations have begun using the \gls{DM} software to run data challenges using precursor data or simulations, and to do performance studies. These activities effectively increase the number of beta-testers of \gls{DM} software products, providing valuable feedback to \gls{DM} on the state of the system.
+In preparation for working with the \gls{LSST} data products and software during operations, several \gls{LSST} science collaborations have begun using the \gls{DM} software to run data challenges using precursor data or simulations, and to do performance studies.
+These activities effectively increase the number of beta-testers of \gls{DM} software products, providing valuable feedback to \gls{DM} on the state of the system.
 
-In order to work effectively with the \gls{DM} software while it is still under development, the science community require:
+In order to work effectively with the \gls{DM} software while it is still under development, the scientific community requires:
 \begin{itemize}
-\item timely access new functionality
-\item stable public APIs and schemas in order to build software for User-Generated analyses,
-\item patches and bug fixes back-ported to the current stable version of the software,
+\item timely access to new functionality,
+\item stable public APIs and schemas in order to build software for user-generated analysis workflows,
+\item select bug fixes and other back-ported to the current stable version of the software,
+\item select software provided by external contributors be included in the software release or distribution (due to the collaborative nature of the project).
 \end{itemize}
 
 
 \subsection{Release Requirements for Operational Data Processing Centers} \label{sec:procreqs}
 
-The \gls{LDF} will be responsible for generating the necessary data products during commissioning and operations.
-The \gls{LDF} requires officially released software to be used in production for the various operational activities.
-Software releases will be run in production at National \gls{Center} for Supercomputing Applications (\gls{NCSA}), CC-IN2P3 and in Chile, and possibly at independent Data Access Centers (iDACs).
+The \gls{LDF} will be responsible for generating the data products as specified in the \DPDD{} during commissioning and operations.
+\gls{LDF} policies require officially released software to be used in production for the various operational activities.
+Software releases will be run in production at the National Center for Supercomputing Applications (\gls{NCSA}), CC-IN2P3, in Chile, and possibly at independent Data Access Centers (iDACs).
 
 Software releases are required to be fully tested and well documented.
 
 Release frequencies will depend on the processing type:
 \begin{itemize}
-\item Prompt Processing requires releases to be available very quick, that could happen on a daily bases, especially in the early days (official releases)
- or a  patch release  for a specific problem may be required during the night (this would require sign off from the \gls{AD} for Science \gls{Operations}).
-\item \gls{DRP} processing  must be stable for long periods, currently processing is foreseen to take 9 months.  Before such a long processing run the release must be very well tested and any updates extremely well controlled.
-\item Image acquisition and header service, which form part of the image acquisition on the mountain will also need strict change control. Releases for this could be on monthly or even lounge timescales - however if there is a problem a patch will be needed immediately.
+\item Rapidly responding to issues involving Prompt Processing will require releases to made available rapidly (i.e., on a timescale of no more than days) and frequently (perhaps daily).
+It may also be necessary to provide patch releases addressing specific problems during the observing night (this would require approval from the \gls{AD} for Science \gls{Operations}).
+\item \gls{DRP} processing  must be stable for long periods (currently, processing is expected to take 9 months).
+Before such a long processing run the release must be very well tested; during the run, any updates must be extremely tightly controlled.
+\item DM software involved in image acquisition, either at the \gls{LDF} or on the mountain, and including the Header Service, also require strict change control.
+Releases for this could be on monthly or even longer timescales; however, if there is a problem a patch will be needed immediately.
 \end{itemize}
 
-Patch releases need to be provided with a frequency that depends on the type of processing
-and on the urgency of the problems to be fixed.
+In short, patch releases will need to be provided with a frequency that depends on the type of processing and on the urgency of the problems to be fixed.
 
 
-\subsection{Release Requirements for \gls{LSST} Subsystems in \gls{Operations}.} \label{sec:otherreqs}
+\subsection{Release Requirements for Observatory Operations} \label{sec:otherreqs}
 
-Other \gls{LSST} subsystem may be consumers of \gls{DM} software products, for example the Telescope \& Site subsystem software makes use of the \gls{DM} software products.
-In order for \gls{DM} to be able to respond correctly to the needs of other \gls{LSST} subsystems, it is important to first identify which \gls{DM} software products are used, and how they are used.
+Other parts of the LSST Observatory are also expected to be consumers of \gls{DM} software products.
+For example, the telescope control software makes extensive use of code provided by \gls{DM}.
+These must be addressed on a case-by-case basis with the consumers of the \gls{DM}-provided software.
 
 
-\subsection{Release Requirements for Infrastructural Software} \label{sec:infreqs}
+\subsection{Release Requirements for User-Facing Infrastructure} \label{sec:infreqs}
 
-A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff but are not directly used to generate \gls{LSST} science data products. An example of this is the software that implements the \gls{LSST} \gls{Science Platform} (\gls{LSP}).
+A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff that are not directly used to generate \gls{LSST} science data products.
+An example of this is the software that implements the \gls{LSP}.
 
 Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure.
 The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
@@ -91,18 +94,18 @@ Patch releases may need to be provided depending on the urgency and severity of 
 
 \subsection{Release Requirements for LSST Construction Activities} \label{sec:nonopsreqs}
 
-This includes activities done in preparation for operations, such as commissioning,
-large scale integration/validation test campaigns, etc. These activities should use use,  as much as possible,  officially released software.
+This includes activities done in preparation for operations, such as commissioning, large scale integration/validation test campaigns, etc.
+These activities should use use, as far as is possible, officially released software.
 
-In some cases however, it is necessary to use non-released software, such as release candidates or stable builds.
-In all cases, the software used must be clearly identified (Github revision at least), and the distribution/deployment strictly controlled.
+In some cases however, it is necessary to use unreleased software, such as release candidates or stable builds.
+In all cases, the software used must be clearly identified, e.g. by Git SHA1, and distribution and deployment must be strictly controlled.
 
 During construction software releases are related to construction milestones.
-In most of the cases, these implies releases to be done on a regular time schedule, for example, every 6 months.
+In most of cases, this implies releases should be made on a regular cadence --- for example, every 6 months.
 
 
 \newpage
-\section{Requirements Consolidation} \label{sec:reqdef}
+\section{Consolidated Requirements} \label{sec:reqdef}
 
 The main purpose of this section is to identify all possible release requirements.
 In the first subsection a few general requirements are given.
@@ -118,11 +121,10 @@ The following general requirements are needed in order to properly implement the
 
 \subsubsection{Software Products Identification Requirement} \label{sec:swid}
 
-All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (GitHub) and documented.
-
-\citeds{DMTN-106} subsection 2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
-The DM product tree provided together with \citeds{LDM-294}, is available at the following link \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.
-
+All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (currently, GitHub) and documented\footnote{
+% Moved to a footnote because this is not a requirement
+\citeds{DMTN-106} \S2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
+The DM Product Tree is provided with \citeds{LDM-294} and may be accessed directly at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.}.
 This requirement needs to be fulfilled in order to ensure the applicability of the release policy and process.
 If the software products are not properly identified, it will not be possible to do releases.
 
@@ -143,65 +145,64 @@ The test should be documented in a test report.
 The following list of requirements is derived from the above section \ref{sec:reqs}.
 
 
-\subsubsection{Releases Schedule Requirement} \label{sec:milestone}
+\subsubsection{Release Schedule Requirement} \label{sec:milestone}
 
 Releases on a software product shall be scheduled in advance.
 
 Two types of release schedule can be identified:
 
 \begin{itemize}
-\item Functional Based Release Schedule: a release shall provide a requested functionality.
+\item Functional Based Release Schedule: a release shall provide specific functionality.
 \item Time-Based Release Schedule: a release shall be provided on a specific date or cadence.
 \end{itemize}
 
-In both cases, releases can be tight to project milestones.
-Additional releases can be requested to the DM-CCB using the RFC mechanism.
+In both cases, releases may be associated with project milestones.
+Additional releases may be made available upon request to the DM-CCB using the “RFC” mechanism as described in \S\ref{sec:process}.
 
 
 \subsubsection{Patch Release Requirement} \label{sec:backport}
 
-It shall be possible to backport a fix on a stable release and provide a patch release including only the backported fix.
+It shall be possible to back-port a fix on a stable release and provide a patch release including only the backported fix.
 
 
 \subsubsection{Third-Party Software Inclusion Requirement} \label{sec:thirdsw}
 
-It shall be possible to include in a software product release or distribution release, a software package provided by a third-party contributor.
+It shall be possible to include a software package provided by a third-party contributor in a software product release or distribtuion.
 
 
 \subsubsection{Stable public APIs and Schemas Requirement} \label{sec:stable}
 
-Public APIs and schemas shall be stable and follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
+% Removed “shall be stable” from this, because that's not well defined: they must follow the deprecation policy, and that policy should be chosen to achieve whatever level of stability is expedient.
+Public APIs and schemas shall follow a well-defined deprecation mechanism in order to give time to the stakeholder to adapt to the new API.
 
 
 \subsubsection{License Requirement} \label{sec:license}
 
-DM software shall be released with an appropriate license, that permits to use and redistribution of software provided by external collaborators.
+DM software shall be released with an appropriate license that permits distribution to, use by, and contributions from, external collaborators.
 
 
 \subsection{Requirements Summary Overview} \label{sec:overview}
 
 The following table gives an overview of the release requirements applicable for each stakeholder.
 
-\setlength\LTleft{-0.4in}
-\setlength\LTright{-0.5in}
-\begin{longtable}{p{2.4cm}p{1.2cm}p{1.4cm}p{1.4cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.7cm}p{1.3cm}p{1.3cm}}\hline
+\setlength\LTleft{-0.55in}
+\setlength\LTright{-0.55in}
+\begin{longtable}{lccccccccc}\hline
 &
-\textbf{SW Ident.}&\textbf{Release Doc.}&\textbf{Release Test}&\textbf{Funct. Based}&\textbf{Time Based}&\textbf{Patch}&\textbf{3rd Party SW}&\textbf{Stable API} &\textbf{License}\\ \hline
-\textbf{LSST Project} \ref{sec:lsstreqs}&
-YES                     & YES                         & YES                         &  YES                         &  YES                      &                     & YES                          &                            & YES   \\ \hline
-\textbf{Science Community} \ref{sec:comreqs}&
-YES                     & YES                         &                                 &                                   &  YES                     & YES             &                                 &  YES                    &            \\ \hline
-\textbf{Proc. Centers} \ref{sec:procreqs}&
-YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &                             &            \\ \hline
-\textbf{Other Operations} \ref{sec:otherreqs}&
-YES                     & YES                         & YES                         & YES                           &                              & YES             &                                  &                             &            \\ \hline
-\textbf{Infrastructure} \ref{sec:infreqs}&
-YES                     & YES                         & YES                         &                                   &  YES                     & YES             &                                  &  YES                    &            \\ \hline
-\textbf{Construction} \ref{sec:nonopsreqs}&
-YES                     & YES.                        & YES.                       & YES                           &  YES                     & YES             &                                  &  YES                    &            \\ \hline
+\rotatebox{60}{\textbf{SW Ident.}}&\rotatebox{60}{\textbf{Release Doc.}}&\rotatebox{60}{\textbf{Release Test}}&\rotatebox{60}{\textbf{Funct. Based}}&\rotatebox{60}{\textbf{Time Based}}&\rotatebox{60}{\textbf{Patch}}&\rotatebox{60}{\textbf{3rd Party SW}}&\rotatebox{60}{\textbf{Stable API}}&\rotatebox{60}{\textbf{License}}\\ \hline
+\textbf{LSST Project}\\ (S\ref{sec:lsstreqs}) &
+\Checkmark                     & \Checkmark                         & \Checkmark                         &  \Checkmark                         &  \Checkmark                      &                     & \Checkmark                          &                            & \Checkmark   \\ \hline
+\textbf{Scientific}\\\textbf{Community} (\S\ref{sec:comreqs}) &
+\Checkmark                     & \Checkmark                         &                                 &                                   &  \Checkmark                     & \Checkmark             &                                 &  \Checkmark                    &            \\ \hline
+\textbf{Proc. Centers}\\ (\S\ref{sec:procreqs})&
+\Checkmark                     & \Checkmark                         & \Checkmark                         & \Checkmark                           &                              & \Checkmark             &                                  &                             &            \\ \hline
+\textbf{Other Ops.}\\ (\S\ref{sec:otherreqs})&
+\Checkmark                     & \Checkmark                         & \Checkmark                         & \Checkmark                           &                              & \Checkmark             &                                  &                             &            \\ \hline
+\textbf{Infrastructure}\\ (\S\ref{sec:infreqs})&
+\Checkmark                     & \Checkmark                         & \Checkmark                         &                                   &  \Checkmark                     & \Checkmark             &                                  &  \Checkmark                    &            \\ \hline
+\textbf{Construction}\\ (\S\ref{sec:nonopsreqs})&
+\Checkmark                     & \Checkmark                         & \Checkmark                        & \Checkmark                           &  \Checkmark                     & \Checkmark             &                                  &  \Checkmark                    &            \\ \hline
 \hline
 \end{longtable}
 \setlength\LTleft{0in}
 \setlength\LTright{0in}
-
-

@@ -1,67 +1,67 @@
 \section{Release Policy} \label{sec:policy}
 
-The following policies are provided taking into account the requirements described in the previous section \ref{sec:reqdef}.
+The following policies are derived from the consolidated requirements described in the previous section \ref{sec:reqdef}.
 
 
 \subsection{Versioning Policy} \label{sec:versinopolicy}
 
 The DM release versioning shall follow Semantic Versioning\footnote{\url{https://semver.org/}} as described in \citeds{DMTN-106}, section 3.3.
 
-This policy partially answers to \ref{sec:stable} requirement.
-In general, API stability is a development aspect that needs to be addressed in the \citep{DevGuide}.
+This policy partially addresses the requirement for stable APIs (\S\ref{sec:stable}).
+
+% Removed this comment, because it is not release policy.
+%In general, API stability is a development aspect that needs to be addressed in the \citep{DevGuide}.
 
 
 \subsection{Release Schedule Policy} \label{sec:schedulepolicy}
 
 Major and minor releases should be scheduled accordingly to the requirements of each stakeholder.
 
-A release plan including for each release following information:
+Each release shall be made following a release plan, which provides the following information:
 
 \begin{itemize}
-\item when a release is expected
-\item specify the corresponding milestone or RFC
-\item if it is a time-based release: specify the timing when the release shall be done (for example, every 6 months)
-\item if it is a functionality based release: specify which functionalities shall be included in the release
+\item when the release is expected;
+\item the corresponding milestone or RFC;
+\item if it is a time-based release: specify the release cadence (for example, every 6 months);
+\item if it is a functionality based release: specify which features shall be included in the release.
 \end{itemize}
 
-This policy answers requirement \ref{sec:milestone} .
+This policy addresses requirement \$\ref{sec:milestone}.
 
 
 \subsection{Patch Releases and Backporting Policy} \label{sec:patchpolicy}
 
-Patch releases shall be scheduled, tested and approved by the DMCCB as much as possible.
-However, the DMPM can authorize urgent changes to the operational systems in case of need.
-The backporting capability is a development aspect that needs to be addressed in the \citep{DevGuide}.
-This policy answers requirement  \ref{sec:backport} .
+Patch releases shall be scheduled, tested and approved by the DMCCB wherever possible.
+However, the DM Project Manager can authorize urgent releases if required.
+
+The mechanisms by which fixes are back-ported are a matter of development practice, rather than policy; as such, they are addressed in the Developer Guide \citep{DevGuide}.
+
+This policy addresses requirement \S\ref{sec:backport} .
 
 
 \subsection{Release Testing Policy} \label{sec:testpolicy}
 
-All releases should be fully tested and test activities documented using Jira ATM.
+All releases must be fully tested and the results recorded according to standard DM practice\footnote{At time of writing, this means that test activities are managed using the Adaptavist Test Management framework for Jira.}.
 
 The scope of the test is to ensure that:
 
 \begin{itemize}
-\item the planned functionalities are provided and working
-\item there is no regression (reintroduction of previously fixed issues)
+\item All planned functionality is provided and working;
+\item There is no regression in functionality or performance relative to previous releases.
 \end{itemize}
 
-LSST System Engineering provides in Jira an integrated infrastructure (ATM) that makes it easy to document and execute test activities.
+This policy addresses requirement \S\ref{sec:test} .
 
-This policy answers requirement \ref{sec:test} .
-
-This policy is not mandatory.
-In some cases unit tests may be considered sufficient or, it may not be possible to fully test a software release in isolation.
+Note that, in some cases, and at the discretion of the DM-CCB, it may be appropriate to relax this policy and release based solely on successful execution of unit and/or integration tests.
 
 
 \subsection{Release Note Policy} \label{sec:notepolicy}
 
-Each release shall be documented by a Release Note.\\
-It shall always be possible to collect a minimum set of information to include in the release note and therefore properly identify the release.
+Each release shall be documented by an accompanying set of release notes.
 
-\citeds{DMTN-106} subsection 3.2 (see \ref{sec:defs}) provides a definition of software release note that can be used as is or tailed depending on the needs.
+\citeds{DMTN-106} \S3.2 provides a definition of software release note that can be used as is or tailed depending on the needs (see also \S\ref{sec:defs} of this document).
 
-This policy answers requirement \ref{sec:reqdoc}.
+This policy addresses requirement \S\ref{sec:reqdoc}.
 
 
 \subsection{Third-Party Software Policy} \label{sec:thirdpolicy}
@@ -71,48 +71,40 @@ The use of all third-party packages shall be approved by the DMCCB using the RFC
 External software may be included in the following ways:
 
 \begin{itemize}
-\item include the package in the environment, if used in the DM code
+\item The package may be included in the standard environment used to execute DM code\footnote{At time of writing, this environment is based on Conda.}
     \begin{itemize}
-    \item this implies that the 3rd party package is available in conda, if not DM should provide a conda recipe.
+    \item this implies that the third party software is already packaged for that environment, or, alternatively, that DM must itself provide sucha a package.
+    \item the software will be provided \textit{as is} and DM is not responsible for it
+    \end{itemize}
+\item include the software as part of a DM software distribution, as an additional package \footnote{At time of wrting, this would mean packaging for EUPS.}
+    \begin{itemize}
     \item the software is provided \textit{as is} and DM is not responsible for it
     \end{itemize}
-\item include the package in a distribution, as an additional  package \footnote{Currently as EUPS}
+\item Create a new DM-provided software product to contain the third-party software
     \begin{itemize}
-    \item the software is provided \textit{as is} and DM is not responsible for it
-    \end{itemize}
-\item include the package in a software product, in case it requires specific LSST customization
-    \begin{itemize}
+    \item This is appropriate if DM-specific patches or customization is required.
     \item DM takes responsibility for the customized package.
     \end{itemize}
 \end{itemize}
 
-In all cases a DM person shall be identified as point of contact and reference for the external package.
+In all cases, a member of the DM team shall be identified as point of contact and reference for the external package.
 
-This policy answers to requirement \ref{sec:thirdsw}.
+This policy addresses requirement \S\ref{sec:thirdsw}.
 
 
 \subsection{Software License Policy} \label{sec:licensepolicy}
 
-DM software license policy is addressed in the \citeds{DevGuide}, in following section
-\url{https://developer.lsst.io/legal/licensing-overview.html#choosing-a-source-code-license}.
+All DM-produced software must carry an Open Source Initiative (OSI)-approved license\footnote{\url{https://opensource.org/licenses}}.
+Specific requirements for particular aspects of the DM codebase are addressed in the Developer Guide \citep{DevGuide}.
 
 
 \newpage
 \section{Applicability of policies } \label{sec:applicability}
 
-The policies described in the previous section \ref{sec:policy} are mandatory, except where specified as non-mandatory.
-
-The \gls{DM} software products, on which these policies are applicable, are defined in the LDM-294.
-The approved product tree is available online at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}
+The policies described in \S\ref{sec:policy} of this document are mandatory for all DM software products, as defined in \citeds{LDM-294}, except where otherwise specified.
 
 
+\subsection{Non-Compliance} \label{sec:noncompliance}
 
-\subsection{Non Compliance} \label{sec:noncompliance}
-
-Each T/CAM may  specify which policy is not applicable for the specific software product and why.
-
-Each stakeholder should ensure that the level of compliance provided by the required software products is acceptable for them.
-
-The DM-CCB shall ensure that the available compliance information is agreed between T/CAMs and stakeholders.
-
-Each time a policy is not considered applicable to a software product the effectiveness of the process is reduced and the risks of problems increase.
+Individual T/CAMs or Product Owners may request that the DM-CCB issue exemptions from specific aspects of policy for particular software products.
+The DM-CCB is responsible for ensuring that the resulting system still meets the needs of applicable stakeholders, and for ensuring that the overall integrity of the DM system is maintained.
