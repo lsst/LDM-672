@@ -84,7 +84,7 @@ These must be addressed on a case-by-case basis with the consumers of the \gls{D
 \subsection{Release Requirements for User-Facing Infrastructure} \label{sec:infreqs}
 
 A significant subset of \gls{DM} software products are used to provide services to \gls{LSST} science users and staff that are not directly used to generate \gls{LSST} science data products.
-An example of this is the software that implements the \gls{LSP}.
+An example of this is the software that implements the \gls{LSP} \citedsp{LSE-319}.
 
 Releases of this type of software are typically on their own cadence and need to be adequately tested before deployment to ensure a stable infrastructure.
 The releases may be tied to processing milestones if the services or features thereof are required for the processing (e.g. functionality of the workflow service may be required for \gls{Data Release} processing and features in the \gls{LSP} may be needed for \gls{QA} of data products).
@@ -121,7 +121,7 @@ The following general requirements are needed in order to properly implement the
 
 \subsubsection{Software Products Identification Requirement} \label{sec:swid}
 
-All \gls{SW} products shall be clearly and unequivocally identifiable in the source repository (currently, GitHub) and documented\footnote{
+All software products shall be clearly and unequivocally identifiable in the source repository (currently, GitHub) and documented\footnote{
 % Moved to a footnote because this is not a requirement
 \citeds{DMTN-106} \S2.2 (see \ref{sec:defs}) provides a software product definition that can be used as a starting point to identify the DM software products.
 The DM Product Tree is provided with \citeds{LDM-294} and may be accessed directly at \url{https://ldm-294.lsst.io/ProductTreeLand.pdf}.}.
